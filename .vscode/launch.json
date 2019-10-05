@@ -12,7 +12,7 @@
             "runtimeExecutable": "npm",
             "runtimeArgs": [
                 "run-script",
-                "dev"
+                "dev-deb"
             ],
             "port": 5858,
             "env": {
@@ -26,7 +26,7 @@
             "runtimeExecutable": "npm",
             "runtimeArgs": [
                 "run-script",
-                "prod"
+                "prod-deb"
             ],
             "port": 5858,
             "env": {

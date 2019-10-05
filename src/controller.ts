@@ -8,4 +8,3 @@ export class Controller {
         res.send(req.body);
     }
 }
-    
