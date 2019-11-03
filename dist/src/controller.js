@@ -1,17 +1,16 @@
-import express from "express";
-
-export class Controller {
-    public getHello(req: express.Request, res: express.Response): void {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Controller {
+    getHello(req, res) {
         res.send("Hello World");
     }
-    public postHello(req: express.Request, res: express.Response): void {
+    postHello(req, res) {
         res.send(req.body);
     }
-
-    public postSomething(req: express.Request, res: express.Response): void {
+    postSomething(req, res) {
         const MongoClient = require("mongodb").MongoClient;
         const uri = "mongodb+srv://dummy:dummy@cluster0-ldrzf.mongodb.net/test?retryWrites=true&w=majority";
-        const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
         client.connect(() => {
             console.log(client.isConnected());
             // client.db("vibe").collection("collection").insert({
@@ -24,5 +23,6 @@ export class Controller {
         });
         res.send(req.body);
     }
-
 }
+exports.Controller = Controller;
+//# sourceMappingURL=controller.js.map

@@ -5,7 +5,12 @@ import {Controller} from "./controller";
 import {UserController} from "./userController";
 =======
 import {UserController} from "./user.controller";
+<<<<<<< HEAD
 >>>>>>> b81ce13f4ff02312c55245111218c14590c184f8
+=======
+import { VibeDatabase } from "./vibe.database";
+
+>>>>>>> 426371e054f84b53fdaa9d6a9a4f560b893a3e48
 export class ApiRouter {
     private router: express.Router = express.Router();
     private controller: Controller = new Controller();
