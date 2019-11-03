@@ -14,21 +14,7 @@ const eventSchema:mongoose.Schema = new Schema({
 
 
 //decrease number of participants 
-eventSchema.methods.removeParticipant = function(cb){
 
-        if (this.attendees > 0)
-        {
-          this.attendees-=1;
-          this.save(cb)
-        }
-}
-
-//increase number of participants
-eventSchema.methods.addParticipant = function(cb){
-
-    this.attendees-=1;
-    this.save(cb)
-}
 
 
 
@@ -38,12 +24,3 @@ eventSchema.methods.toJson = function () {
       attendees:this.attendees,
     }
   }
-
-  export const BookSchema = new Schema({
-    title: { type: String, required: true },
-    author: { type: String, required: true }
-  });
-  
-const Book = model("Book", BookSchema);
-export default Book;
-  module.exports = mongoose.model('event', eventSchema);
