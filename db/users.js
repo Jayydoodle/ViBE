@@ -3,6 +3,11 @@ const mongoose = require('mongoose'),
   bcrypt = require('bcrypt-nodejs');
 
 const UserSchema = new Schema({
+username:{
+  type:String,
+  required:true,
+  unique:true
+},
   email: {
     type: String,
     lowercase: true,
@@ -53,7 +58,8 @@ UserSchema.methods.comparePassword = function (candidatePassword, cb) {
 
 UserSchema.methods.toJson = function () {
   return {
-    _id: this._id,
+    user_id: this.user_id,
+    username:this.username,
     firstName: this.profile.firstName,
     lastName: this.profile.lastName,
     email: this.email,
