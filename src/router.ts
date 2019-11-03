@@ -1,7 +1,11 @@
 import express from "express";
 import {Controller} from "./controller";
+<<<<<<< HEAD
 // tslint:disable-next-line:max-line-length
 import {UserController} from "./userController";
+=======
+import {UserController} from "./user.controller";
+>>>>>>> b81ce13f4ff02312c55245111218c14590c184f8
 export class ApiRouter {
     private router: express.Router = express.Router();
     private controller: Controller = new Controller();
