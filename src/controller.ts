@@ -14,7 +14,9 @@ export class Controller {
         const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
         client.connect(() => {
             console.log(client.isConnected());
-            client.db("vibe").collection("collection").insert({name : "something", description: "this is something."});
+            //client.db("vibe").collection("collection").insert({name : "something", description: "this is something."});
+            //const data = client.db("vibe").collection("collection").find({});
+            //data.forEach((doc: any) => {console.log(JSON.stringify(doc)); }, () => {});
             client.close();
         });
         res.send(req.body);

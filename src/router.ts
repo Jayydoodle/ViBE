@@ -1,6 +1,6 @@
 import express from "express";
 import {Controller} from "./controller";
-import {UserController} from "./user.Controller";
+import {UserController} from "./user.controller";
 export class ApiRouter {
     private router: express.Router = express.Router();
     private controller: Controller = new Controller();
