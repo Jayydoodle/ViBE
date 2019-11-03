@@ -13,7 +13,7 @@ class ApiRouter {
     // Creates the routes for this router and returns a populated router object
     getRouter() {
         this.router.get("/hello", this.controller.getHello);
-        this.router.post("/hello", this.controller.postHello);
+        this.router.post("/hello", this.controller.postSomething);
         return this.router;
     }
 }
