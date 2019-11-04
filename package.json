@@ -30,19 +30,19 @@
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "npm-run-all build start",
     "prod-deb": "npm-run-all start-deb",
-    "start": "nodemon --nolazy ./dist/src/server.js",
+    "start": "nodemon --nolazy ./dist/server.js",
     "start-deb": "nodemon --nolazy --inspect-brk=5858 ./dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gsilber/NodeTypescriptStarter.git"
+    "url": "git+https://github.com/AmaadRafi/ViBE/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gsilber/NodeTypescriptStarter/issues"
+    "url": "https://github.com/AmaadRafi/ViBE/"
   },
-  "homepage": "https://github.com/gsilber/NodeTypescriptStarter#readme"
+  "homepage": "https://github.com/AmaadRafi/ViBE/#readme"
 }
