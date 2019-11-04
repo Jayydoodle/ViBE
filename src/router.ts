@@ -1,30 +1,30 @@
 import express from "express";
 import {Controller} from "./controller";
-<<<<<<< HEAD
+import {EventController} from './event.controller'
+
 // tslint:disable-next-line:max-line-length
 import {UserController} from "./userController";
-=======
-import {UserController} from "./user.controller";
-<<<<<<< HEAD
->>>>>>> b81ce13f4ff02312c55245111218c14590c184f8
-=======
-import { VibeDatabase } from "./vibe.database";
 
->>>>>>> 426371e054f84b53fdaa9d6a9a4f560b893a3e48
 export class ApiRouter {
     private router: express.Router = express.Router();
-    private controller: Controller = new Controller();
-    private userController = new UserController();
+    //private controller: Controller = new Controller();
+    private userController: UserController = new UserController();
+    private eventController: EventController = new EventController();
 
     // Creates the routes for this router and returns a populated router object
     public getRouter(): express.Router {
-        this.router.get("/hello", this.controller.getHello);
-        this.router.post("/hello", this.controller.postSomething);
-        this.router.get("/allusers", this.userController.allUsers);
+
+        this.router.get("/users", this.userController.allUsers);
         this.router.get("/user/:user_id", this.userController.userInfo);
-        this.router.post("/createuser", this.userController.createUser);
-        this.router.put("update/:user_id", this.userController.editUserInfo);
-        this.router.delete("/user/:user_id", this.userController.deleteuser);
+        this.router.post("/user", this.userController.createUser);
+        this.router.put("user/:user_id/update", this.userController.editUserInfo);
+        this.router.delete("/user/:user_id/delete", this.userController.deleteuser);
+        this.router.post('/event',this.eventController.createEvent);
+        this.router.put('/event/:event_id',this.eventController.updateEvent);
+        this.router.delete('/event/:event_id',this.eventController.deleteEvent);
+        this.router.get('/event/zip',this.eventController.getEventbyZip);
+        this.router.get('/event/state',this.eventController.getEventsbyState);
+
 
         return this.router;
     }
