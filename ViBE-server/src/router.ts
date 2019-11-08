@@ -1,6 +1,6 @@
 import express from "express";
 import {Controller} from "./controller";
-import {EventController} from "./event.controller";
+import {EventController} from "./eventController";
 
 // tslint:disable-next-line:max-line-length
 import {UserController} from "./userController";
