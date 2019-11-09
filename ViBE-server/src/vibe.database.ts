@@ -68,7 +68,6 @@ export class VibeDatabase {
                             + result.insertedIds.length
                             + ") ordered document(s) successfully into "
                             + db + "." + collection + ".");
-                        return result;
                     })
                     .catch((err: any) => {
                         console.log(err);
@@ -80,7 +79,6 @@ export class VibeDatabase {
                             + result.insertedIds.length
                             + ") document(s) successfully into "
                             + db + "." + collection + ".");
-                        return result;
                     })
                     .catch((err: any) => {
                         console.log(err);
