@@ -1,5 +1,5 @@
 import express from "express";
-import {VibeDatabase} from "./vibe.database";
+import {VibeDatabase} from "../vibe.database";
 
 export class EventController {
 

@@ -1,19 +1,21 @@
-import express from "express";
-import {Controller} from "./controllers/controller";
-import {EventController} from "./controllers/eventController";
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const eventController_1 = require("./controllers/eventController");
 // tslint:disable-next-line:max-line-length
-import {UserController} from "./controllers/userController";
-
-export class ApiRouter {
-    private router: express.Router = express.Router();
-    // private controller: Controller = new Controller();
-    private userController: UserController = new UserController();
-    private eventController: EventController = new EventController();
-
+const userController_1 = require("./controllers/userController");
+class ApiRouter {
+    constructor() {
+        this.router = express_1.default.Router();
+        // private controller: Controller = new Controller();
+        this.userController = new userController_1.UserController();
+        this.eventController = new eventController_1.EventController();
+    }
     // Creates the routes for this router and returns a populated router object
-    public getRouter(): express.Router {
-
+    getRouter() {
         this.router.get("/users", this.userController.allUsers);
         this.router.get("/user/:user_id", this.userController.userInfo);
         this.router.post("/user", this.userController.createUser);
@@ -24,7 +26,8 @@ export class ApiRouter {
         this.router.delete("/event/:event_id", this.eventController.deleteEvent);
         this.router.get("/event/zip", this.eventController.getEventbyZip);
         this.router.get("/event/state", this.eventController.getEventsbyState);
-
         return this.router;
     }
 }
+exports.ApiRouter = ApiRouter;
+//# sourceMappingURL=router.js.map

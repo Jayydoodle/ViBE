@@ -1,5 +1,5 @@
 import express from "express";
-import {VibeDatabase} from "./vibe.database";
+import {VibeDatabase} from "../vibe.database";
 
 export class UserController {
 
@@ -8,13 +8,11 @@ export class UserController {
     // function to create event
     public createUser(req: express.Request, res: express.Response): void {
 
-      UserController.database.connect(() => {
-          UserController.database.getClient().db("vibe").collection("collection").insert({
-            description: "this is a test for create user.",
-            inUserCreate : "my bad"
-           }); // inserts into database
-         });
-      // // closes connection
+      UserController.database.insertOne("vibe", "collection",
+        {
+        description: "this is a test for create user.",
+        inUserCreate : "my bad"
+       });
       res.send(req.body);
     }
 
