@@ -45,6 +45,7 @@ class VibeDatabase {
                 .then((result) => {
                 console.log("Document " + result.insertedId + " successfully inserted into "
                     + db + "." + collection + ".");
+                return result;
             })
                 .catch((err) => {
                 console.log(err);
@@ -60,7 +61,6 @@ class VibeDatabase {
                         + result.insertedIds.length
                         + ") ordered document(s) successfully into "
                         + db + "." + collection + ".");
-                    return result;
                 })
                     .catch((err) => {
                     console.log(err);
@@ -73,7 +73,6 @@ class VibeDatabase {
                         + result.insertedIds.length
                         + ") document(s) successfully into "
                         + db + "." + collection + ".");
-                    return result;
                 })
                     .catch((err) => {
                     console.log(err);

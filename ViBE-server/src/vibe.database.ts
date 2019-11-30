@@ -52,6 +52,7 @@ export class VibeDatabase {
                 .then((result: any) => {
                     console.log("Document " + result.insertedId + " successfully inserted into "
                         + db + "." + collection + ".");
+                    return result;
                 })
                 .catch((err: any) => {
                     console.log(err);
