@@ -8,6 +8,7 @@
     color: #F0AD4E;
 }
 
+<<<<<<< HEAD
 #ip2 {
     border-radius: 25px;
     border: 2px solid#F0AD4E;
@@ -196,3 +197,8 @@ h3 {
   a:active {
     color: blue;
   }
+=======
+#id-vibeLogo {
+  height:25px;
+}
+>>>>>>> 9e58b783a4cca479f7bc8665545485c580e5e7db

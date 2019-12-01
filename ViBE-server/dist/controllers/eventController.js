@@ -5,42 +5,29 @@ class EventController {
     // function to create event
     createEvent(req, res) {
         EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(req.body); // inserts into database
+            EventController.database.getClient().db("vibe").collection("event").insertOne(req.body); // inserts into database
         });
         // // closes connection
         res.send(req.body);
+        console.log(req.body);
     }
     eventInfo(req, res) {
         EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(req.body); // inserts into database
+            EventController.database.getClient().db("vibe").collection("collection").findone(req.body);
         });
         // // closes connection
         res.send(req.body);
     }
-    updateEvent(req, res) {
+    getAllEvents(req, res) {
         EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(req.body); // inserts into database
-        });
-        // // closes connection
-        res.send(req.body);
-    }
-    deleteEvent(req, res) {
-        EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(req.body); // inserts into database
-        });
-        // // closes connection
-        res.send(req.body);
-    }
-    getEventbyZip(req, res) {
-        EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(req.body); // inserts into database
-        });
-        // // closes connection
-        res.send(req.body);
-    }
-    getEventsbyState(req, res) {
-        EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(req.body); // inserts into database
+            const events = EventController.database.getClient().db("vibe").collection("event").find({});
+            function iterateFunc(doc) {
+                console.log(doc);
+            }
+            function errorFunc(error) {
+                console.log(error);
+            }
+            events.forEach(iterateFunc, errorFunc);
         });
         // // closes connection
         res.send(req.body);
