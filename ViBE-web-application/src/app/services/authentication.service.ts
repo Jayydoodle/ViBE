@@ -42,6 +42,13 @@ export class AuthenticationService {
         localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
     }
 
+    register(newUser:User){
+        return this.http.post<{access_token: string}>(this.dataBaseUri+this.serviceLink+"/register", newUser)
+            .pipe(tap(res => {
+                this.login(newUser.email, newUser.password);
+            }));
+    }
+
     logout() {
         localStorage.removeItem("id_token");
         localStorage.removeItem("expires_at");
@@ -59,14 +66,6 @@ export class AuthenticationService {
 
     public isLoggedOut() {
         return !this.isLoggedIn();
-    }
-
-    register(email:string, password:string){
-        // return this.http.post<{access_token: string}>(this.dataBaseUri+this.serviceLink+"/register", {email, password})
-        //     .pipe(tap(res => {
-        //         this.login(email, password);
-        //     }));
-        return false;
     }
 
     public get loggedIn(): boolean{

@@ -15,18 +15,18 @@
   
       <div id="login-form">
           <form>
-              <input type="text" placeholder="Email"/>
-              <input type="password" placeholder="Password"/>
+              <input type="text" placeholder="Email" [(ngModel)]="this.userEmail" [ngModelOptions]="{standalone: true}"/>
+              <input type="password" placeholder="Password" [(ngModel)]="this.userPass" [ngModelOptions]="{standalone: true}"/>
               <button type="button" class="btn login" (click)="onClick_Authenticate()">login</button>
           </form>
       </div>
   
       <div id="signup-form">
           <form>
-              <input type="email" placeholder="Enter your email"/>
-              <input type="text" placeholder="Choose username"/>
-              <input type="password" placeholder="Create password"/>
-              <button type="button" class="btn signup">create account</button>
+              <input type="email" placeholder="Enter your email" [(ngModel)]="this.userEmail" [ngModelOptions]="{standalone: true}"/>
+              <input type="text" placeholder="Choose username" [(ngModel)]="this.userName" [ngModelOptions]="{standalone: true}"/>
+              <input type="password" placeholder="Create password" [(ngModel)]="this.userPass" [ngModelOptions]="{standalone: true}"/>
+              <button type="button" class="btn signup" (click)="onClick_Register()">create account</button>
           </form>
       </div>
   
