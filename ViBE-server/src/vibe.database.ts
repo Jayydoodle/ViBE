@@ -46,6 +46,30 @@ export class VibeDatabase {
         });
     }
 
+    public getOne(db:string, collection:string, query?:{}, projections?:{}):any{
+        return this.connect(()=>{
+            this.getClient().db(db).collection(collection).findOne(query, projections)
+                .then((result:any)=>{
+                    return result;
+                })
+                .catch((err: any) => {
+                    console.log(err);
+                })
+        })
+    }
+
+    public getAll(db:string, collection:string):any{
+        return this.connect(()=>{
+            this.getClient().db(db).collection(collection).find()
+                .then((result:any)=>{
+                    return result;
+                })
+                .catch((err: any) => {
+                    console.log(err);
+                })
+        })
+    }
+
     public insertOne(db: string, collection: string, data: object) {
         return this.connect(() => {
             this.getClient().db(db).collection(collection).insertOne(data)
