@@ -5,9 +5,34 @@
     <div id="LogoContainer">
         <img src ="/assets/images/vibeLogoAltMedium.png" alt="vibeLogo.png">
     </div>
-    <button id="LoginButton" class="btn btn-primary bg-dark text-warning" (click)="onClick_Login()">Login</button>
 
-    <div class="modal" id="modal-login" style="display:none">
+    <div class="form-modal" id="modal-login">
+    
+      <div class="form-toggle">
+          <button id="login-toggle" (click)="onClick_Login()">log in</button>
+          <button id="signup-toggle" (click)="onClick_Signup()">sign up</button>
+      </div>
+  
+      <div id="login-form">
+          <form>
+              <input type="text" placeholder="Email"/>
+              <input type="password" placeholder="Password"/>
+              <button type="button" class="btn login" (click)="onClick_Authenticate()">login</button>
+          </form>
+      </div>
+  
+      <div id="signup-form">
+          <form>
+              <input type="email" placeholder="Enter your email"/>
+              <input type="text" placeholder="Choose username"/>
+              <input type="password" placeholder="Create password"/>
+              <button type="button" class="btn signup">create account</button>
+          </form>
+      </div>
+  
+  </div>
+
+    <!-- <div class="modal" id="modal-login" style="display:none">
             <div class="modal-dialog" role="document">
               <div class="modal-content custom-thing">
                 <div class="modal-header">
@@ -36,6 +61,6 @@
                 </div>
               </div>
             </div>
-          </div>
+    </div> -->
     
 </div>
