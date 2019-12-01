@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MatSliderModule } from '@angular/material/slider';
     AppComponent,
     TestComponent,
     SidenavComponent,
-    NavbarComponent
+    NavbarComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
