@@ -16,11 +16,14 @@ export class ApiRouter {
     // Creates the routes for this router and returns a populated router object
     public getRouter(): express.Router {
 
-        this.router.post("/createuser", this.userController.createUser);
-        this.router.put("/user/location", this.userController.UpdateUserLocation);
-        // this.router.delete("/user/:user_id/delete", this.userController.deleteuser);
-        this.router.post("/event/create_event", this.eventController.createEvent);
-        this.router.get("/event", this.eventController.getAllEvents);
+        // User
+        const userLink = "/user";
+        this.router.put(userLink + "/location", this.userController.UpdateUserLocation);
+
+        // Event
+        const eventLink = "/event";
+        this.router.post(eventLink + "/create_event", this.eventController.createEvent);
+        //this.router.get("/event", this.eventController.getAllEvents);
 
         // Authentication
         const authLink = "/authenticate";

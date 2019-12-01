@@ -36,13 +36,13 @@ export class AuthenticateController {
         }
     }
 
-    public register(req: express.Request, res: express.Response): void{
+    public register(req: express.Request, res: express.Response): void {
         const email = req.body.email;
         const password = req.body.password;
-        
-        //Check if duplicate user exists
-        if(this.validateUser(email, password)){
-            
+
+        // Check if duplicate user exists
+        if (this.validateUser(email, password)) {
+            console.log();
         }
     }
 }
