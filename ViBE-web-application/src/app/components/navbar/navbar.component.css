@@ -8,7 +8,6 @@
     color: #F0AD4E;
 }
 
-<<<<<<< HEAD
 #ip2 {
     border-radius: 25px;
     border: 2px solid#F0AD4E;
@@ -169,12 +168,12 @@ transition: left 0.3s ease;
 @media (min-width: 800px) {
 .et-hero-tabs,
 .et-slide {
-h1 {
-    font-size: 3rem;
-}
-h3 {
-    font-size: 1rem;
-}
+  h1 {
+      font-size: 3rem;
+  }
+  h3 {
+      font-size: 1rem;
+  }
 }
 .et-hero-tab {
     font-size: 1rem;
@@ -197,8 +196,7 @@ h3 {
   a:active {
     color: blue;
   }
-=======
-#id-vibeLogo {
-  height:25px;
-}
->>>>>>> 9e58b783a4cca479f7bc8665545485c580e5e7db
+
+  #id-vibeLogo {
+    height:25px;
+  }
