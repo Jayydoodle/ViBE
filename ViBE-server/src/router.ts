@@ -19,11 +19,10 @@ export class ApiRouter {
         this.router.post("/user", this.userController.createUser);
         this.router.put("user/:user_id/update", this.userController.editUserInfo);
         this.router.delete("/user/:user_id/delete", this.userController.deleteuser);
-        this.router.post("/event", this.eventController.createEvent);
+        this.router.post("/event/create_event", this.eventController.createEvent);
         this.router.put("/event/:event_id", this.eventController.updateEvent);
-        this.router.delete("/event/:event_id", this.eventController.deleteEvent);
-        this.router.get("/event/zip", this.eventController.getEventbyZip);
-        this.router.get("/event/state", this.eventController.getEventsbyState);
+        // this.router.delete("/event/:event_id", this.eventController.deleteEvent);
+        this.router.get("/event", this.eventController.getAllEvents);
 
         return this.router;
     }
