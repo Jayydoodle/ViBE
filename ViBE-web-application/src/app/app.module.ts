@@ -12,6 +12,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { TestComponent } from './components/test/test.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
     TestComponent
   ],
   imports: [
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function tokenGetter() {
+          return localStorage.getItem('access_token');
+        },
+          whitelistedDomains: ['http://localhost:3000'],
+          blacklistedRoutes: ['http://localhost:3000/api/authenticate/login']
+      }
+    }),
     BrowserModule,
     MatSliderModule,
     MatToolbarModule,
