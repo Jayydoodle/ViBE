@@ -11,7 +11,7 @@ class UserController {
     }
     UpdateUserLocation(req, res) {
         UserController.database.connect(() => {
-            UserController.database.getClient().db("vibe").collection("user").updateOne({ author: req.body._id }, { $set: { long: req.body.long, lat: req.body.lat }
+            UserController.database.getClient().db("vibe").collection("user").updateOne({ author: req.body.author }, { $set: { long: req.body.long, lat: req.body.lat }
             })
                 .then(function (result) {
                 console.log(result + "updated");
