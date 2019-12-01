@@ -35,4 +35,14 @@ export class AuthenticateController {
             res.send(null);
         }
     }
+
+    public register(req: express.Request, res: express.Response): void{
+        const email = req.body.email;
+        const password = req.body.password;
+        
+        //Check if duplicate user exists
+        if(this.validateUser(email, password)){
+            
+        }
+    }
 }
