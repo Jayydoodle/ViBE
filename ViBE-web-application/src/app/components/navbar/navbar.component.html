@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+          <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Party</a>
             <a class="dropdown-item" href="#">Event</a>
@@ -22,12 +22,40 @@
         <li class="nav-item">
           <a class="nav-link text-warning" href="#">About</a>
         </li>    
+
+        <div class="form-modal" id="modal-login" style="display:none">
+    
+          <div class="form-toggle">
+              <button id="login-toggle" onclick="toggleLogin()">log in</button>
+              <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+          </div>
+      
+          <div id="login-form">
+              <form>
+                  <input type="text" placeholder="Email"/>
+                  <input type="password" placeholder="Password"/>
+                  <button type="button" class="btn login">login</button>
+              </form>
+          </div>
+      
+          <div id="signup-form">
+              <form>
+                  <input type="email" placeholder="Enter your email"/>
+                  <input type="text" placeholder="Choose username"/>
+                  <input type="password" placeholder="Create password"/>
+                  <button type="button" class="btn signup">create account</button>
+                  <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
+              </form>
+          </div>
+      
+      </div>
+
         
-        <div class="modal" id="modal-login" style="display:none">
+        <!-- <div class="modal" id="modal-login" style="display:none">
             <div class="modal-dialog" role="document">
-              <div class="modal-content custom-thing">
-                <div class="modal-header">
-                  <h5 class="modal-title">Login</h5>
+              <div class="modal-content custom-ting">
+                <div class="modal-header custom-ting">
+                  <h5 class="modal-title text-warning">Login</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClick_CloseModal()">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -35,7 +63,7 @@
 
                 <form>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label for="exampleInputEmail1" id="id-modalLabel">Email address</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
@@ -52,14 +80,14 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
       </ul>
       
       <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
       </form> -->
-
+  
       <ul class="navbar-nav">        
           <li class="nav-item ">
               <button class="btn btn-primary bg-dark text-warning" (click)="onClick_Login()">Login</button>
