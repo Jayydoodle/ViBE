@@ -18,33 +18,11 @@ class EventController {
         // // closes connection
         res.send(req.body);
     }
-    updateEvent(req, res) {
-        try {
-            EventController.database.connect(() => {
-                EventController.database.getClient().db("vibe").collection("event").updateOne({ id: req.body.id }, { $set: { title: req.body.title } }, { $set: { description: req.body.description } }); // inserts into database
-            });
-        }
-        catch (e) {
-            console.log(e);
-        }
-        // // closes connection
-        res.send(req.body);
-    }
-    // public deleteEvent(req: express.Request, res: express.Response): void {
-    //     EventController.database.connect(() => {
-    //         EventController.database.getClient().db("vibe").collection("event").findone
-    // (
-    //             req.body
-    //             ); // inserts into database
-    //        });
-    //     // // closes connection
-    //     res.send(req.body);
-    // }
     getAllEvents(req, res) {
         EventController.database.connect(() => {
             const events = EventController.database.getClient().db("vibe").collection("event").find({});
             function iterateFunc(doc) {
-                console.log(JSON.stringify(doc, null, 4));
+                console.log(doc);
             }
             function errorFunc(error) {
                 console.log(error);
