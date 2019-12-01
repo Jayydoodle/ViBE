@@ -18,13 +18,6 @@ export class SplashScreenComponent implements OnInit {
   ngOnInit() {
   }
 
-<<<<<<< HEAD:ViBE-web-application/src/app/splash-screen/splash-screen.component.ts
-
-  onClick_Login() {
-    console.log("login was clicked");
-    document.getElementById("login-toggle").style.backgroundColor="#F0AD4E";
-    document.getElementById("login-toggle").style.color="#343A40";
-=======
   setUsername(){
     console.log("woah");
   }
@@ -50,9 +43,8 @@ export class SplashScreenComponent implements OnInit {
     this.userName = "";
     this.userEmail = "";
     this.userPass = "";
-    document.getElementById("login-toggle").style.backgroundColor="#57B846";
-    document.getElementById("login-toggle").style.color="#fff";
->>>>>>> 5678ff340f09d18de124c17091aa3708bf714f36:ViBE-web-application/src/app/components/splash-screen/splash-screen.component.ts
+    document.getElementById("login-toggle").style.backgroundColor="#F0AD4E";
+    document.getElementById("login-toggle").style.color="#343A40";
     document.getElementById("signup-toggle").style.backgroundColor="#fff";
     document.getElementById("signup-toggle").style.color="#343A40";
     document.getElementById("signup-form").style.display="none";
