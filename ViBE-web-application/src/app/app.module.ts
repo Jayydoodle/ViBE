@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { TestComponent } from './components/test/test.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,9 @@ import { TestComponent } from './components/test/test.component';
     MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

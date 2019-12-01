@@ -9,5 +9,13 @@ import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class EventService {
 
-        
+    constructor(private http:HttpClient){}
+
+    dataBaseUri:string = "http://localhost:3000/api/";
+    serviceLink:string = "events";
+
+    public getEvents(){
+        return this.http.get<any[]>(this.dataBaseUri+this.serviceLink);
+    }
+
 }
