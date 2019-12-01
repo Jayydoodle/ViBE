@@ -20,7 +20,8 @@ export class EventController {
     public eventInfo(req: express.Request, res: express.Response): void {
 
         EventController.database.connect(() => {
-           EventController.database.getClient().db("vibe").collection("collection").insert(
+            
+            EventController.database.getClient().db("vibe").collection("collection").findone(
                 req.body
                 ); // inserts into database
            });
@@ -29,25 +30,34 @@ export class EventController {
     }
 
     public updateEvent(req: express.Request, res: express.Response): void {
-
+        try{
         EventController.database.connect(() => {
-           EventController.database.getClient().db("vibe").collection("collection").insert(
-                req.body
+           EventController.database.getClient().db("vibe").collection("event").updateOne(
+               
+                {"id" : req.body.id},
+                { $set: {"title" : req.body.title } },
+                { $set: {"description" : req.body.description } }
                 ); // inserts into database
            });
+        }
+        catch (e)
+        {
+            console.log(e);
+        }
         // // closes connection
         res.send(req.body);
     }
 
-public deleteEvent(req: express.Request, res: express.Response): void {
-    EventController.database.connect(() => {
-        EventController.database.getClient().db("vibe").collection("collection").insert(
-            req.body
-            ); // inserts into database
-       });
-    // // closes connection
-    res.send(req.body);
-}
+// public deleteEvent(req: express.Request, res: express.Response): void {
+//     EventController.database.connect(() => {
+//         EventController.database.getClient().db("vibe").collection("event").findone
+// (
+//             req.body
+//             ); // inserts into database
+//        });
+//     // // closes connection
+//     res.send(req.body);
+// }
 
 public getEventbyZip(req: express.Request, res: express.Response): void {
 

@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 // event table, that stores name of event and also
 // total number of ppl attending.
 const eventSchema: mongoose.Schema = new Schema({
+  id: Number,
   attendees: Number,
   eventname: String
 });
