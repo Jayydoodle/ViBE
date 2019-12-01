@@ -24,14 +24,14 @@
                    </svg>
         <div class="nav">
             <button mat-raised-button>about</button>&nbsp; 
-            <button mat-raised-button>create event</button>&nbsp; 
-            <button mat-raised-button>login</button>&nbsp; 
+            <button mat-raised-button onclick="document.getElementById('modal-create').style.display='block'">create event</button>&nbsp; 
+            <button mat-raised-button onclick="document.getElementById('modal-login').style.display='block'">login</button>&nbsp; 
             <button mat-raised-button>logout</button>&nbsp; 
         </div>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <div id="modal-login" class="modal">
+  <div id="modal-login" class="modal" style = "display:none;">
     <div id="login-box">
      <form id="login-form">
       <div class="left">
@@ -39,15 +39,39 @@
           <h1>Please Log in</h1>
           <input type="text" name="email" id="login-email" placeholder="E-mail" />
           <input type="password" id="login-password"name="password" placeholder="Password" />
-         <button id="modalbuttons"text-align="center"   type="submit" class="btn btn-success btn-block btn-large">Login</button>
+        <div id= "login">
+            <button id="modalbuttons"text-align="center"   type="submit" class="btn btn-success btn-block btn-large">Login</button>&nbsp;
+            <div class="or">OR</div>&nbsp;
+            <button id="modalbuttons"text-align="center"   type="submit" class="btn btn-success btn-block btn-large">Signup</button>
+        </div>
+
       </div>  
     </form>
+        </div>
     </div>
-       <div class="right">
-         <span class="loginwith">Sign in with<br />social network</span>
-            <button class="social-signin facebook">Log in with facebook</button>
-            <button class="social-signin twitter">Log in with Github</button>
-            <button class="social-signin google" onclick = "googleSignin()">Log in with Google+</button>
-         </div>
-      <div class="or">OR</div>
+
+    <div id="modal-create" class="modal" style = "display:none;">
+      <div id="login-box"> 
+        <span onclick="document.getElementById('modal-create').style.display='none'" class="close" title="Close Modal">&times;</span>
+         <div style="text-align: center">
+                
+            <h1>Create a Post</h1></div>
+              <p>Choose a category:</p>
+              <select class="form-control" id="sel1">
+                <option value ="other">other</option>
+                <option value ="sports">sports</option>
+                <option value ="news">news</option>
+                <option value ="media">media</option>
+              </select>
+                <br>
+               <div class="form-group">
+                <textarea class="form-control" id = "name" rows="1"placeholder="Title"></textarea>
+                  <textarea class="form-control" id = "contents" rows="7"placeholder="Text"></textarea>
+                
+                  <div id="postbutton">
+                <button id="modalbuttons" type="submit" class=" btn btn-primary  "onclick="add()">POST</button>
+              <button id="modalbuttons" type="submit" class=" btn btn-default "onclick="document.getElementById('modal-create').style.display='none'" >SAVE DRAFT</button>
+            </div>
+          </div>
+      </div>
     </div>
