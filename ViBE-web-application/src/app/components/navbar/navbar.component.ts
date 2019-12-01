@@ -26,4 +26,9 @@ export class NavbarComponent implements OnInit {
     document.getElementById('modal-login').style.display='none';
   }
 
+  swapButtons(){
+
+    
+  }
+
 }
