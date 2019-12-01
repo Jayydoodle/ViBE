@@ -17,42 +17,151 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-warning" href="#">Create Event</a>
+          <a class="nav-link text-warning" href="#"onclick="document.getElementById('modal-create').style.display='block'">Create Event</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-warning" href="#">About</a>
+          <a class="nav-link text-warning" href="#myModal" data-toggle="modal">About</a>
         </li>    
         
-        <!-- <div class="modal" id="modal-login" style="display:none">
+         <div class="modal" id="modal-create" style="display:none">
             <div class="modal-dialog" role="document">
               <div class="modal-content custom-ting">
                 <div class="modal-header custom-ting">
-                  <h5 class="modal-title text-warning">Login</h5>
+                  <h5 class="modal-title text-warning">Create an Event</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClick_CloseModal()">
-                    <span aria-hidden="true">&times;</span>
+                      <span onclick="document.getElementById('modal-create').style.display='none'" class="close" title="Close Modal">&times;</span>
                   </button>
                 </div>
 
                 <form>
                   <div class="form-group">
-                    <label for="exampleInputEmail1" id="id-modalLabel">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  <!--   
+              <p>Choose a category:</p>
+              <select class="form-control" id="sel1">
+                <option value ="other">other</option>
+                <option value ="sports">sports</option>
+                <option value ="news">news</option>
+                <option value ="media">media</option>
+              </select>-->
+                   
+                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Party
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off">Event
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off">Study
+                  </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" autocomplete="off">Concert
+                  </label>
+                </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              
+                     <textarea class="form-control" id = "ip2" rows="1"placeholder="Title"></textarea><br>
+                         <textarea class="form-control" id = "ip2" rows="7"placeholder="Description"></textarea>
                   </div>
                 </form>
                 
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onClick_CloseModal()">Close</button>
+                  <button type="button" class="btn btn-primary">Create Event</button>
+                  
                 </div>
               </div>
             </div>
-          </div> -->
+          </div> 
+
+          <!--ABOUTPAGE MODAL-->
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">About ViBE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-4" id="result">
+            
+                    <div id='about-us'>
+            <h1>Growing Together</h1>
+                <p>This site was put together in late 2019 by a group of students from the East Coast area taking the "Advanced Web Technology course" originally designed to enteract with a database and allow people of like minded interests to connect with each other. </p><br>
+                <p>We are ecstatic to continue our learning journies in tech.</p> <br>
+                <p>Building this site has inspired us to push our abilities as developers to the next level! We hope it might help you find and share opportunities for inspiration, learning, growth, and for your community as well.</p><br>
+                <p>Code on.</p>
+        </div>
+                        <div id='about-us'>
+          
+              <!-- Hero -->
+  <section class="et-hero-tabs">
+    <h1>MEET THE TEAM</h1>
+    <h3>Take a look at the developers behind this project</h3>
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#tab-ja">Jason Allen</a>
+      <a class="et-hero-tab" href="#tab-sg">Shabir Ghulam</a>
+      <a class="et-hero-tab" href="#tab-ni">Nonso Iwu</a>
+      <a class="et-hero-tab" href="#tab-ar">Amaad Rafi</a>
+      <a class="et-hero-tab" href="#tab-tb">Toby Boyd</a>
+      <a class="et-hero-tab" href="#tab-jb">Jason Burnell</a>
+      <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="et-main">
+    <section class="et-slide" id="tab-ja">
+      <h1>Jason Allen</h1>
+      <h3>Chief Executive Officer</h3>
+      <p>Aspiring developer working in the industry. 
+      His focus in this project has been extracting events 
+      by integrating this site with Google's API. You can
+       find Jason on <a href="https://github.com/Jayydoodle">Github</a>.</p>
+    </section>
+    <section class="et-slide" id="tab-sg">
+      <h1>Shabir Ghulam</h1>
+      <h3>Software Architect</h3>
+      <p>A growing hacker focused on using SQL, JavaScript(Angular), HTML + CSS. When not designing, he can be found at high speeds and high mileage burnin' rubber! You can find Shabir on <a href="https://github.com/Sghulam22">Github</a>.</p>
+    </section>
+    <section class="et-slide" id="tab-ni">
+      <h1>Nonso Iwu</h1>
+      <h3>Vice President</h3>
+      <p>A respectable developer and artist who's focus in this project has been on the backend; creating events, features and implementing the functionality. Has demonstrated what can be accomplished through building custom, cross platform relational databases that grow and change over the years. He can be found on <a href = "https://github.com/nonsoiwu">Github</a>.</p>
+    </section>
+    <section class="et-slide" id="tab-ar">
+      <h1>Amaad Rafi</h1>
+      <h3>Project Manager</h3>
+      <p>Has offered businesses and organizations top quality digital solutions at affordable prices. Loves coding, debugging, troubleshooting, designing and testing computer structures. He can be found on <a href="https://github.com/AmaadRafi">Github</a>.</p>
+    </section>
+    <section class="et-slide" id="tab-tb">
+      <h1>Toby Boyd</h1>
+      <h3>Senior Technical Lead</h3>
+      <p>Enjoys working and learning with the team and has offered real time solutions to functionality and design improvements. Has focused on editing source-code and managing database systems. He can be found on <a href="https://github.com/tobiasalanboyd">Github</a>.</p>
+    </section>
+      <section class="et-slide" id="tab-jb">
+      <h1>Jason Burnell</h1>
+      <h3>Software Engineer</h3>
+      <p>Hopes to become an excellent web develper and coder and to have a chance to bring his own experiences to the table. Primary focus has been on the front-end design of this project. Jason can be found on <a href="https://github.com/jasonburnell98">Github</a>.</p>
+    </section>
+  </main>
+               
+                
+
+        </div>
+                  
+                    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+          
       </ul>
       
       <!-- <form class="form-inline my-2 my-lg-0">
@@ -67,5 +176,3 @@
       </ul>
     </div>
   </nav>
-
-  

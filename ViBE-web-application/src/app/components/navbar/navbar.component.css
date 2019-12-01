@@ -2,6 +2,197 @@
     background-color: #343A40;
 }
 
+
+
 #id-modalLabel {
     color: #F0AD4E;
 }
+
+#ip2 {
+    border-radius: 25px;
+    border: 2px solid#F0AD4E;
+    padding: 20px; 
+    
+} 
+
+  /* The Close Button (x) */
+  .close {
+    position: relative;
+   
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+
+  .categories{
+      text-align: center;
+     
+  }
+  .h5 {
+      text-align: center;
+  }
+
+  .modal-full {
+    min-width: 100%;
+    margin: 0;
+}
+
+.modal-full .modal-content {
+    min-height: 100vh;
+}
+
+/* about page css */
+
+#about-us > h1 {
+    font-family: 'Georgia';
+    font-family: 'Mina';
+    font-size: 200%;
+    line-height: 130%;
+    letter-spacing: .22em;
+    text-align: center;
+    word-spacing: .21em;
+  }
+
+  .modal-content .about-modal-content {
+    min-height: auto;
+  }
+
+  #about-us {
+    background-color: #d3d3d3;
+    background-color: rbga(211, 211, 211, 0.8);
+    border-radius: .57em;
+    grid-area: us;
+    margin-bottom: 2%;
+    padding: .75em 2.5em 1.25em 2.5em;
+    text-align: center;
+  }
+
+  #about-team {
+    background-color: #c0c0c0;
+    background-color: rbga(192, 192, 192, 0.8);
+    border-radius: .57em;
+    grid-area: team;
+  }
+  
+  #about-contact {
+    grid-area: contact;
+    border-radius: .57em;
+    background-color: #cfcfcf;
+    background-color: rgba(207, 207, 207, 0.8);
+    padding: 1em;
+  }
+
+  /*about the team*/
+  
+  
+  body {
+    font-family: "Century Gothic", 'Lato', sans-serif;
+}
+
+a {
+text-decoration: none;
+}
+
+.et-hero-tabs,
+.et-slide {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+position: relative;
+background: #eee;
+    text-align: center;
+    padding: 0 2em;
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1rem;
+}
+h3 {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.6;
+}
+}
+
+.et-hero-tabs-container {
+display: flex;
+flex-direction: row;
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 70px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+background: #343A40;
+z-index: 10;
+&--top {
+    position: fixed;
+    top: 0;
+}
+}
+
+.et-hero-tab {
+display: flex;
+justify-content: center;
+align-items: center;
+flex: 1;
+color: #000;
+letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 0.8rem;
+
+}
+.et-hero-tab:hover {
+    color: #F0AD4E;
+background: #343A40;
+    transition: all 0.5s ease;
+}
+
+
+.et-hero-tab-slider {
+position: absolute;
+bottom: 0;
+width: 0;
+height: 6px;
+background: #66B1F1;
+transition: left 0.3s ease;
+}
+
+@media (min-width: 800px) {
+.et-hero-tabs,
+.et-slide {
+h1 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 1rem;
+}
+}
+.et-hero-tab {
+    font-size: 1rem;
+}
+}
+
+
+  
+  /* visited link */
+  a:visited {
+    color: green;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #F0AD4E;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
