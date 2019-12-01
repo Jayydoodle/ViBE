@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const eventController_1 = require("./controllers/eventController");
 // tslint:disable-next-line:max-line-length
+const authenticateController_1 = require("./controllers/authenticateController.");
 const userController_1 = require("./controllers/userController");
 class ApiRouter {
     constructor() {
@@ -13,6 +14,7 @@ class ApiRouter {
         // private controller: Controller = new Controller();
         this.userController = new userController_1.UserController();
         this.eventController = new eventController_1.EventController();
+        this.authController = new authenticateController_1.AuthenticateController();
     }
     // Creates the routes for this router and returns a populated router object
     getRouter() {
@@ -25,6 +27,11 @@ class ApiRouter {
         this.router.put("/event/:event_id", this.eventController.updateEvent);
         // this.router.delete("/event/:event_id", this.eventController.deleteEvent);
         this.router.get("/event", this.eventController.getAllEvents);
+
+        // Authentication
+        const authLink = "/authenticate";
+        this.router.post(authLink + "/login", this.authController.login);
+        
         return this.router;
     }
 }
