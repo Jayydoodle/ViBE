@@ -23,7 +23,7 @@ export class EventController {
             
             EventController.database.getClient().db("vibe").collection("collection").findone(
                 req.body
-                ); // inserts into database
+                );
            });
         // // closes connection
         res.send(req.body);
@@ -59,24 +59,24 @@ export class EventController {
 //     res.send(req.body);
 // }
 
-public getEventbyZip(req: express.Request, res: express.Response): void {
+    public getEventbyZip(req: express.Request, res: express.Response): void {
 
-    EventController.database.connect(() => {
-        EventController.database.getClient().db("vibe").collection("collection").insert(
-            req.body
-            ); // inserts into database
-       });
-    // // closes connection
-    res.send(req.body);
-}
+        EventController.database.connect(() => {
+            EventController.database.getClient().db("vibe").collection("collection").insert(
+                req.body
+                ); // inserts into database
+        });
+        // // closes connection
+        res.send(req.body);
+    }
 
-public getEventsbyState(req: express.Request, res: express.Response): void {
-    EventController.database.connect(() => {
-        EventController.database.getClient().db("vibe").collection("collection").insert(
-            req.body
-            ); // inserts into database
-       });
-    // // closes connection
-    res.send(req.body);
-}
+    public getEventsbyState(req: express.Request, res: express.Response): void {
+        EventController.database.connect(() => {
+            EventController.database.getClient().db("vibe").collection("collection").insert(
+                req.body
+                ); // inserts into database
+        });
+        // // closes connection
+        res.send(req.body);
+    }
 }

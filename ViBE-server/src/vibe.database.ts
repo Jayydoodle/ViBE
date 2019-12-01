@@ -46,6 +46,11 @@ export class VibeDatabase {
         });
     }
 
+    public getOne(db: string, collection: string, data: object){
+
+
+    }
+
     public insertOne(db: string, collection: string, data: object) {
         return this.connect(() => {
             this.getClient().db(db).collection(collection).insertOne(data)
