@@ -5,11 +5,11 @@
 } 
   
 #id_navbar {
-  background-color: darkgrey;
+  background-color: #343A40;
 } 
 
 
 #id_map {
-  background-color: darkgrey;
+  background-color: #343A40;
   flex-grow : 1;
 }
