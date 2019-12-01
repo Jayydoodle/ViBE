@@ -23,10 +23,10 @@
   
       <div id="signup-form">
           <form>
-              <input type="email" placeholder="Enter your email" name="email" [(ngModel)]="model.email" #email="ngModel" required/>
+              <input type="email" placeholder="Enter your email" />
               <input type="text" placeholder="Choose username"/>
               <input type="password" placeholder="Create password"/>
-              <button type="button" class="btn signup">create account</button>
+              <button type="button" class="btn signup" (click)="onClick_Register( document.getElementById("email").value )">create account</button>
           </form>
       </div>
   
