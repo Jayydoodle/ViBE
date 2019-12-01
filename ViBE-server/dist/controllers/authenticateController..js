@@ -36,6 +36,14 @@ class AuthenticateController {
             res.send(null);
         }
     }
+    register(req, res) {
+        const email = req.body.email;
+        const password = req.body.password;
+        // Check if duplicate user exists
+        if (this.validateUser(email, password)) {
+            console.log();
+        }
+    }
 }
 exports.AuthenticateController = AuthenticateController;
 AuthenticateController.database = new vibe_database_1.VibeDatabase();

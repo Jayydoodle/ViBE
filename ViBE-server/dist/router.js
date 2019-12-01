@@ -26,6 +26,7 @@ class ApiRouter {
         // Authentication
         const authLink = "/authenticate";
         this.router.post(authLink + "/login", this.authController.login);
+        this.router.post(authLink + "/register", this.authController.register);
         return this.router;
     }
 }
