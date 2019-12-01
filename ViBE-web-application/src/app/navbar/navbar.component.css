@@ -3,3 +3,8 @@
     top:0px;
     position: relative;
 }
+
+.mat-toolbar.mat-primary {
+    background: #3a3834;
+    color: #fff;
+  }
