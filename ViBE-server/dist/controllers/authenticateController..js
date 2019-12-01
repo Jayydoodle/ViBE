@@ -1,31 +1,40 @@
 "use strict";
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const jwt = __importStar(require("jsonwebtoken"));
 const vibe_database_1 = require("../vibe.database");
 class AuthenticateController {
     validateUser(email, password) {
-        //    const username = req.body.username,
-        //          password = req.body.password;
-        /*
-            This is where we connect to the database and search for the user
-            with matching password
-            */
-        // AuthenticateController.database.getOne
+        const bcrypt = require("bcryptjs");
+        const user = AuthenticateController.database.getOne("vibe", "user", { email });
+        if (user == null) {
+            return false;
+        }
+        return bcrypt.compareSync(password, user.password);
     }
     // function to create event
     login(req, res) {
-        res.send(req.body);
-        //    const email = req.body.email,
-        //          password = req.body.password;
-        //    if(this.validateUser(email, password)){
-        //       const RSA_PRIVATE_KEY = fs.readFileSync('./demos/private.key');
-        // const userId = getUserId();
-        //        const jwtBearerToken = jwt.sign({}, RSA_PRIVATE_KEY, {
-        //            algorithm: 'RS256',
-        //            expiresIn: 120,
-        //            subject: userId;
-        //        }
-        //    }
-        //  res.send(req.body);
+        const email = req.body.email;
+        const password = req.body.password;
+        if (this.validateUser(email, password)) {
+            // const RSA_PRIVATE_KEY = fs.readFileSync('./demos/private.key');
+            const RSA_PRIVATE_KEY = "secret-key";
+            const jwtBearerToken = jwt.sign({}, RSA_PRIVATE_KEY, {
+                algorithm: "RS256",
+                expiresIn: 120,
+                subject: email
+            });
+            res.send(jwtBearerToken);
+        }
+        else {
+            res.send(null);
+        }
     }
 }
 exports.AuthenticateController = AuthenticateController;

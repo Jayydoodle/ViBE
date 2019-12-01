@@ -27,11 +27,9 @@ class ApiRouter {
         this.router.put("/event/:event_id", this.eventController.updateEvent);
         // this.router.delete("/event/:event_id", this.eventController.deleteEvent);
         this.router.get("/event", this.eventController.getAllEvents);
-
         // Authentication
         const authLink = "/authenticate";
         this.router.post(authLink + "/login", this.authController.login);
-        
         return this.router;
     }
 }
