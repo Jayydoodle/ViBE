@@ -9,63 +9,42 @@ export class EventController {
     public createEvent(req: express.Request, res: express.Response): void {
 
       EventController.database.connect(() => {
-         EventController.database.getClient().db("vibe").collection("collection").insert(
+         EventController.database.getClient().db("vibe").collection("event").insertOne(
               req.body
               ); // inserts into database
          });
       // // closes connection
       res.send(req.body);
+      console.log(req.body);
     }
 
     public eventInfo(req: express.Request, res: express.Response): void {
 
         EventController.database.connect(() => {
-           EventController.database.getClient().db("vibe").collection("collection").insert(
+
+            EventController.database.getClient().db("vibe").collection("collection").findone(
                 req.body
-                ); // inserts into database
+                );
            });
         // // closes connection
         res.send(req.body);
     }
 
-    public updateEvent(req: express.Request, res: express.Response): void {
+    public getAllEvents(req: express.Request, res: express.Response): void {
 
         EventController.database.connect(() => {
-           EventController.database.getClient().db("vibe").collection("collection").insert(
-                req.body
-                ); // inserts into database
-           });
-        // // closes connection
-        res.send(req.body);
-    }
+            const events = EventController.database.getClient().db("vibe").collection("event").find({});
 
-    public deleteEvent(req: express.Request, res: express.Response): void {
-        EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(
-                req.body
-                ); // inserts into database
+            function iterateFunc(doc: any) {
+                console.log(doc);
+             }
+
+            function errorFunc(error: any) {
+                console.log(error);
+             }
+            events.forEach(iterateFunc, errorFunc);
         });
-        // // closes connection
-        res.send(req.body);
-    }
 
-    public getEventbyZip(req: express.Request, res: express.Response): void {
-
-        EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(
-                req.body
-                ); // inserts into database
-        });
-        // // closes connection
-        res.send(req.body);
-    }
-
-    public getEventsbyState(req: express.Request, res: express.Response): void {
-        EventController.database.connect(() => {
-            EventController.database.getClient().db("vibe").collection("collection").insert(
-                req.body
-                ); // inserts into database
-        });
         // // closes connection
         res.send(req.body);
     }
