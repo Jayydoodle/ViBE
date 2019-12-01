@@ -24,7 +24,7 @@ export class MapComponent implements OnInit {
       mapTypeId: 'roadmap'
     });
   
-    this.setHeatmap();
+    this.setHeatmapTest();
 
     navigator.geolocation.getCurrentPosition(position => {
       var pos = {
@@ -35,15 +35,17 @@ export class MapComponent implements OnInit {
       infoWindow.setContent('You are here');
       infoWindow.open(this.map);
       this.map.setCenter(pos);
+      this.setHeatmapCurrent(pos);
     });
+    
 
   }
-  setHeatmap(): void{
+  setHeatmapTest(): void{
 
     var heatmapData = [
-      {location: new google.maps.LatLng(39.6780, -75.76), weight: 50},
-      {location: new google.maps.LatLng(39.6780, -75.7506), weight: 50},
-      {location: new google.maps.LatLng(39.6780, -75.74), weight: 50}
+      {location: new google.maps.LatLng(39.6780, -75.76), weight: 1},
+      {location: new google.maps.LatLng(39.6780, -75.7506), weight: 1},
+      {location: new google.maps.LatLng(39.6780, -75.74), weight: 1}
     ];
 
     var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -52,7 +54,21 @@ export class MapComponent implements OnInit {
     });
 
     heatmap.setMap(this.map);
-    
+  }
+  setHeatmapCurrent(pos): void{
+
+      var heatmapData = [
+        {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1},
+        {location: new google.maps.LatLng(pos.lat, pos.lng + .01), weight: 1},
+        {location: new google.maps.LatLng(pos.lat, pos.lng - .01), weight: 1}
+      ];
+
+      var heatmap = new google.maps.visualization.HeatmapLayer({
+        data: heatmapData,
+        radius: 50
+      });
+
+      heatmap.setMap(this.map);
   }
 
 }
