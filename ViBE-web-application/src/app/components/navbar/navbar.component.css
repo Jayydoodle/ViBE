@@ -24,7 +24,6 @@
     font-weight: bold;
   }
   
-  .close:hover,
   .close:focus {
     color: red;
     cursor: pointer;
@@ -196,7 +195,6 @@ transition: left 0.3s ease;
   a:active {
     color: blue;
   }
-
-  #id-vibeLogo {
-    height:25px;
-  }
+#id-vibeLogo {
+  height:25px;
+}
