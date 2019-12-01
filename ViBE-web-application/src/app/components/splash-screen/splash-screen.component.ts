@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-splash-screen',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SplashScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthenticationService) { }
+
+  userName:string;
+  userEmail:string;
+  userPass:string;
 
   ngOnInit() {
+    this.userName = "";
+    this.userEmail = "";
+    this.userPass = "";
+  }
+
+  onClick_Register() {
+    this.authService.register(this.userEmail, this.userPass).subscribe((result)=>{
+
+    });
   }
 
   onClick_Login() {
