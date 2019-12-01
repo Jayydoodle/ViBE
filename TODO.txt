@@ -1,0 +1,27 @@
+TODO:
+
+====URGENT====
+
+Sidebar -> 
+
+JWT:
+-Make JSON Web Token functionality
+--Log In and Log Out
+--Modal (Shabir)
+
+Landing page:
+--Login/SignUp page
+
+Design:
+--Colors: Dark grey and orange
+--Side bar only
+--Think of where to put acknowledgements (github)
+--Login modal at beginning(w/ blurred map in background) -> map
+
+Sidebar:
+-Acct icon
+-Event icon (Add event)
+
+===not urgent===
+Glowing Vibe circle
+Logo Change
