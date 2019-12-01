@@ -4,11 +4,11 @@ const vibe_database_1 = require("../vibe.database");
 class UserController {
     // function to create event
     createUser(req, res) {
-        const result = UserController.database.insertOne("vibe", "collection", {
+        UserController.database.insertOne("vibe", "collection", {
             description: "this is a test for create user.",
             inUserCreate: "my bad"
         });
-        res.send(result);
+        res.send(req.body);
     }
     userInfo(req, res) {
         const MongoClient = require("mongodb").MongoClient;
