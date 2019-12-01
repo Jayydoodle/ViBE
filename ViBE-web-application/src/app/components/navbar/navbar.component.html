@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="testtt">
+    <a class="navbar-brand text-warning" href="#">ViBE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Party</a>
+            <a class="dropdown-item" href="#">Event</a>
+            <a class="dropdown-item" href="#">Study</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Concert</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="#">Create Event</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="#">About</a>
+        </li>    
+        
+        <div class="modal" id="modal-login" style="display:none">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content custom-thing">
+                <div class="modal-header">
+                  <h5 class="modal-title">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClick_CloseModal()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                </form>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onClick_CloseModal()">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </ul>
+      
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+
+      <ul class="navbar-nav">        
+          <li class="nav-item ">
+              <button class="btn btn-primary bg-dark text-warning" (click)="onClick_Login()">Login</button>
+          </li>
+        <li class="nav-item">
+            <button class="btn btn-primary bg-dark text-warning" (click)="onClick_Logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  
