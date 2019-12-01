@@ -20,10 +20,10 @@ export class AuthenticationService {
             }));
     }
 
-    register(email:string, password:string){
-        return this.http.post<{access_token: string}>(this.dataBaseUri+this.serviceLink+"/register", {email, password})
+    register(newUser:User){
+        return this.http.post<{access_token: string}>(this.dataBaseUri+this.serviceLink+"/register", newUser)
             .pipe(tap(res => {
-                this.login(email, password);
+                this.login(newUser.email, newUser.password);
             }));
     }
 

@@ -21,9 +21,10 @@ export class SplashScreenComponent implements OnInit {
   }
 
   onClick_Register() {
-    this.authService.register(this.userEmail, this.userPass).subscribe((result)=>{
-
-    });
+    this.authService.register(this.userEmail, this.userName, this.userPass)
+      .subscribe((result)=>{
+        console.log(result);
+      });
   }
 
   onClick_Login() {
