@@ -10,11 +10,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatSliderModule } from '@angular/material/slider';
-import { MapComponent } from './map/map.component';
+import { MapComponent } from './components/map/map.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
-import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 @NgModule({
   declarations: [
