@@ -34,14 +34,6 @@ export class EventsComponent implements OnInit {
   {
     var event = new Event();
   
-<<<<<<< HEAD
-    event.firstName = "shabir";
-    event.lat="111";
-    event.long="222";
-    // event.title=this.desc;
-    // event.description=this.title;
-    event.category="sports"
-=======
     event.title = (<HTMLInputElement>document.getElementById("title")).value;
     event.description = (<HTMLInputElement>document.getElementById("description")).value;
 
@@ -57,7 +49,6 @@ export class EventsComponent implements OnInit {
 
     event.latitude = this.autoComplete.getPlace().geometry.location.lat();
     event.longitude = this.autoComplete.getPlace().geometry.location.lng(); 
->>>>>>> 235a25c281e022d3d1ef7441976210aeb2904b75
 
     this.eventService.createEvent(event)
     .subscribe((result)=>{
