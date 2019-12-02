@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { User } from './../../models/user';
 import { updateLocale } from 'moment';
 import { EventService } from 'src/app/services/event.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,10 +16,12 @@ import { EventService } from 'src/app/services/event.service';
 export class NavbarComponent implements OnInit {
 
   //eventService:EventService;
-  constructor(private userService:UserService,
-              private eventService:EventService,
-              private authService: AuthenticationService) { 
-  }
+  constructor(
+    private userService:UserService,
+    private eventService:EventService,
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
   }
@@ -33,6 +36,12 @@ export class NavbarComponent implements OnInit {
     console.log("modal close clicked");
     document.getElementById('modal-login').style.display='none';
    
+  }
+
+  onClick_Logout() {
+    // logout user from server 
+    console.log("logout clicked.");
+    this.router.navigate(['/']);
   }
 }
 
