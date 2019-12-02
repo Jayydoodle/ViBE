@@ -9,23 +9,15 @@
 &nbsp;
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#" (click)="getParty()">Party</a>
-            <a class="dropdown-item" href="#" (click)="getFundraiser()">Fundraiser</a>
-            <a class="dropdown-item" href="#" (click)="getSports()">Sports</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" (click)="getConcert()">Concert</a>
-          </div>
-        </li>
+        
+        
+        <app-events></app-events>
         <li class="nav-item">
           <a class="nav-link text-warning" href="#"onclick="document.getElementById('modal-create').style.display='block';">Create Event</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-warning" href="#myModal" data-toggle="modal">About</a>
         </li>    
-        
          <div class="modal" id="modal-create" style="display:none">
             <div class="modal-dialog" role="document">
               <div class="modal-content custom-ting">

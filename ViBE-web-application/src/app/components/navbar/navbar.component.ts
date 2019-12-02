@@ -23,67 +23,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  //function that gets sport events
-  getSports(){
-    
-   this.eventService.getEventsByCategory("sports")
-          .subscribe((result)=>{
-            var i=0;
-            alert("we here");
-            while(result[i])
-            {
-              var x =result[i];
-              console.log(JSON.stringify(x));
-              i++;
-            }
-          })    
-  }
-
-  //function that gets party events
-  getParty()
-  {
-    this.eventService.getEventsByCategory("party")
-      .subscribe((result)=>{
-        var i=0;
-        while(result[i])
-        {
-          var x =result[i];
-          console.log(JSON.stringify(x));
-          i++;
-        }
-      })
-  }
-
-  //function that gets concert events
-  getConcert()
-  {
-    this.eventService.getEventsByCategory("concert")
-      .subscribe((result)=>{
-        var i=0;
-        while(result[i])
-        {
-          var x =result[i];
-          console.log(JSON.stringify(x));
-          i++;
-        }
-      })
-  }
-
-  //function that gets all the fundraiser events
-  getFundraiser()
-  {
-    this.eventService.getEventsByCategory("Fundraiser")
-      .subscribe((result)=>{
-        var i=0;
-            while(result[i])
-            {
-              var x =result[i];
-              console.log(JSON.stringify(x));
-              i++;
-            }
-      })
-  }
-
   onClick_Login() {
     console.log("login was clicked");
     document.getElementById('modal-login').style.display='block';
@@ -95,12 +34,15 @@ export class NavbarComponent implements OnInit {
     document.getElementById('modal-login').style.display='none';
    
   }
+<<<<<<< HEAD
 
   swapButtons(){
 
     
   }
 
+=======
+>>>>>>> b6793c1b0c9f8853e19b3c513a9ca40f579d16fb
 }
 
 

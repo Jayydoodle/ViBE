@@ -6,6 +6,8 @@ export class User {
     username: string;
     email: string;
     password: string;
-    location: { longitude: number; 
-                latitude: number;};
+    location: { 
+        longitude: number; 
+        latitude: number;
+    };
 }

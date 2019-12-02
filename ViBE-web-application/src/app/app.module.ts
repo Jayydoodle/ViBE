@@ -17,7 +17,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { EventService } from './services/event.service';
 import { UserService } from './services/user.service';
-import { EventsComponent } from './events/events.component';
+import { EventsComponent } from './components/events/events.component';
 
 @NgModule({
   declarations: [
