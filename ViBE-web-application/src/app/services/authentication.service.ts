@@ -31,13 +31,13 @@ export class AuthenticationService {
          */
         return this.http.post<any[]>(this.dataBaseUri+this.serviceLink+"/login", {email : email, password : password})
             .pipe(tap(res=>{
-                this.setSession(res);
+                return this.setSession(res);
             }));
     }
 
     private setSession(authResult){
         if(authResult == null){
-            return;
+            return null;
         }
         const expiresAt = moment().add(authResult.expiresIn, 'second');
 

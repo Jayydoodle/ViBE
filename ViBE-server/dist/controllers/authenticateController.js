@@ -25,8 +25,7 @@ class AuthenticateController {
         const password = req.body.password;
         AuthenticateController.database.connect(() => {
             AuthenticateController.database.getClient().db("vibe").collection("user")
-                // .find({email : "\"" + email + "\""})
-                .find({ author: "\"" + email + "\"" })
+                .find({ email: "\"" + email + "\"" })
                 .toArray()
                 .then((user) => {
                 // console.log(user);
@@ -77,9 +76,10 @@ class AuthenticateController {
             AuthenticateController.database.getClient()
                 .db("vibe")
                 .collection("user")
-                .find({ email }).limit(1)
+                .find({ email: { $eq: email } }).limit(1)
                 .toArray()
                 .then((result1) => {
+                console.log('"' + email + '"');
                 if (0 === result1.length) {
                     AuthenticateController.database.connect(() => {
                         AuthenticateController.database.getClient()

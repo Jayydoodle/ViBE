@@ -15,6 +15,11 @@ export class SplashScreenComponent implements OnInit {
   userEmail:string = "";
   userPass:string = "";
 
+  userEmailLogin:string = "";
+  userPassLogin:string = "";
+
+  userExistsRegister:boolean;
+
   ngOnInit() {
   }
 
@@ -30,11 +35,16 @@ export class SplashScreenComponent implements OnInit {
       location: { longitude: 0, latitude: 0}
     };
 
+    this.userExistsRegister = false;
+    
     console.log(newUser);
     this.authService.register(newUser)
      .subscribe((result)=>{
-       console.log(result);
+        if(result.success === false){
+          this.userExistsRegister = true;
+        }
      });
+
 
      this.onClick_Login();
   }
@@ -70,9 +80,21 @@ export class SplashScreenComponent implements OnInit {
 
   onClick_Authenticate() {
     console.log("modal close clicked");
-    document.getElementById('modal-login').style.display='none';
-    document.getElementById('Splash').style.display='none';
-    document.getElementById('id-registerAlert').style.display='block';  
+
+    return this.authService.login(this.userEmailLogin, this.userPassLogin)
+      .subscribe((result)=>{
+        console.log(result);
+        if(result==null){
+          return false;
+        }else{
+          //enter
+          document.getElementById('modal-login').style.display='none';
+          document.getElementById('Splash').style.display='none';
+          document.getElementById('id-registerAlert').style.display='block';  
+          return true;
+        }
+      });
+
   }
 
   onClick_Enter() {

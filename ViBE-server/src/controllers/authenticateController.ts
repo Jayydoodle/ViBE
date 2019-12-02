@@ -25,8 +25,7 @@ export class AuthenticateController {
 
         AuthenticateController.database.connect(() => {
             AuthenticateController.database.getClient().db("vibe").collection("user")
-              // .find({email : "\"" + email + "\""})
-              .find({author : "\"" + email + "\""})
+              .find({email : { $eq: email}}).limit(1)
               .toArray()
               .then((user: any) => {
                   // console.log(user);
@@ -76,7 +75,7 @@ export class AuthenticateController {
             AuthenticateController.database.getClient()
                 .db("vibe")
                 .collection("user")
-                .find({email}).limit(1)
+                .find({email : { $eq: email}}).limit(1)
                 .toArray()
                 .then((result1: any) => {
                     if (0 === result1.length) {

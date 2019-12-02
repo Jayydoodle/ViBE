@@ -30,7 +30,7 @@ export class MapComponent implements OnInit {
     
     this.userService.getUserByEmail("Shabir").subscribe(userData =>{
         
-        user = userData as User;
+        user = userData[0];
 
         navigator.geolocation.getCurrentPosition(position => {
           var pos = {

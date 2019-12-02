@@ -34,15 +34,20 @@ export class NavbarComponent implements OnInit {
     document.getElementById('modal-login').style.display='none';
    
   }
-<<<<<<< HEAD
 
-  swapButtons(){
+  onClick_Logout(){
+    console.log("logout");
+    this.authService.logout();
+    //Go back to enter page
+    //document.getElementById('modal-login').style.display='true';
 
-    
+    //document.getElementById("login-toggle").style.backgroundColor="#F0AD4E";
+    //document.getElementById("login-toggle").style.color="#343A40";
+    //document.getElementById("signup-toggle").style.backgroundColor="#fff";
+    //document.getElementById("signup-toggle").style.color="#343A40";
+    //document.getElementById("signup-form").style.display="true";
+    //document.getElementById("login-form").style.display="block";
   }
-
-=======
->>>>>>> b6793c1b0c9f8853e19b3c513a9ca40f579d16fb
 }
 
 

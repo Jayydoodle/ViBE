@@ -244,12 +244,12 @@ letter-spacing: 0.1rem;
     font-size: 0.8rem;
 
 }
+
 .et-hero-tab:hover {
     color: #F0AD4E;
 background: #343A40;
     transition: all 0.5s ease;
 }
-
 
 .et-hero-tab-slider {
 position: absolute;
