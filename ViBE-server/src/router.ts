@@ -22,9 +22,9 @@ export class ApiRouter {
 
         // Event
         const eventLink = "/event";
-        this.router.get(eventLink,this.eventController.getAllEvents);
+        this.router.get(eventLink, this.eventController.getAllEvents);
         this.router.post(eventLink + "/create_event", this.eventController.createEvent);
-        //this.router.get("/event", this.eventController.getAllEvents);
+        // this.router.get("/event", this.eventController.getAllEvents);
 
         // Authentication
         const authLink = "/authenticate";
