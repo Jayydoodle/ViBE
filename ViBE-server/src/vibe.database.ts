@@ -31,19 +31,35 @@ export class VibeDatabase {
         this.password = newPassword;
     }
 
+    public connect2() {
+        const mongoose = require("mongoose");
+        mongoose.Promise = Promise;
+
+        mongoose.connect(this.getUri(), {useNewUrlParser: true , useUnifiedTopology: true})
+            .then((err: any) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("Successfully connected");
+                }
+            });
+        }
+
     public connect(callback: () => any): void {
         const MongoClient = require("mongodb").MongoClient;
         const client = new MongoClient(this.getUri(), { useNewUrlParser: true , useUnifiedTopology: true});
+        let result: any;
         client.connect((err: any) => {
             if (err) {
                 console.log(err);
             } else {
                 this.client = client;
-                callback();
+                result = callback();
             }
             client.close();
             this.client = null;
         });
+        return result;
     }
 
     public getOne(db: string, collection: string, query?: {}, projections?: {}): any {

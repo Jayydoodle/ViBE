@@ -11,6 +11,7 @@ const jwt = __importStar(require("jsonwebtoken"));
 const vibe_database_1 = require("../vibe.database");
 class AuthenticateController {
     validateUser(email, password) {
+        const mongoose = require("mongoose");
         const bcrypt = require("bcryptjs");
         const user = AuthenticateController.database.getOne("vibe", "user", { email });
         if (user == null) {
@@ -35,6 +36,37 @@ class AuthenticateController {
         else {
             res.send(null);
         }
+    }
+    screwUp(req, res) {
+        AuthenticateController.database.connect(() => {
+            const result = AuthenticateController.database.getClient().db("vibe").collection("collection")
+                .find()
+                .toArray()
+                .then((tresult) => {
+                console.log("woah");
+                console.log(tresult);
+                res.json(tresult);
+            });
+        });
+    }
+    register(req, res) {
+        const email = req.body.email;
+        const password = req.body.password;
+        return AuthenticateController.database.connect(() => {
+            // Check if duplicate user exists
+            const result = AuthenticateController.database.getClient()
+                .db("vibe")
+                .collection("user")
+                .findOne({ email });
+            if (result == null) {
+                AuthenticateController.database.getClient()
+                    .db("vibe")
+                    .collection("user")
+                    .insertOne(req.body);
+                return true;
+            }
+            return false;
+        });
     }
 }
 exports.AuthenticateController = AuthenticateController;

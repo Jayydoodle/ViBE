@@ -24,20 +24,35 @@ class VibeDatabase {
     setPassword(newPassword) {
         this.password = newPassword;
     }
+    connect2() {
+        const mongoose = require("mongoose");
+        mongoose.Promise = Promise;
+        mongoose.connect(this.getUri(), { useNewUrlParser: true, useUnifiedTopology: true })
+            .then((err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                console.log("Successfully connected");
+            }
+        });
+    }
     connect(callback) {
         const MongoClient = require("mongodb").MongoClient;
         const client = new MongoClient(this.getUri(), { useNewUrlParser: true, useUnifiedTopology: true });
+        let result;
         client.connect((err) => {
             if (err) {
                 console.log(err);
             }
             else {
                 this.client = client;
-                callback();
+                result = callback();
             }
             client.close();
             this.client = null;
         });
+        return result;
     }
     getOne(db, collection, query, projections) {
         return this.connect(() => {
