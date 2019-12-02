@@ -8,7 +8,7 @@ export class UserController {
   public getAllUsers(req: express.Request, res: express.Response): void {
     UserController.database.connect(() => {
         const Users = UserController.database.getClient().db("vibe").collection("user")
-          .find({})
+          .find()
           .toArray()
           .then((result: any) => {
             res.json(result);
@@ -30,9 +30,10 @@ export class UserController {
   public UpdateUserLocation(req: express.Request, res: express.Response): void {
 
     UserController.database.connect(() => {
+        console.log(req.body);
         UserController.database.getClient().db("vibe").collection("user").updateOne(
           { email: req.body.email},
-          { $set: { long: req.body.long, lat: req.body.lat}
+          { $set: { "location.longitude": req.body.longitude, "location.latitude": req.body.latitude}
           })
 
         .then(function(result: any) {

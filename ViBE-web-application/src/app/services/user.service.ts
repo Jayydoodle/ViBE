@@ -15,7 +15,7 @@ export class UserService {
     serviceLink:string = "user"
     
     //
-    public getUsers(){
+    public getAllUsers(){
         return this.http.get<any[]>(this.dataBaseUri+this.serviceLink);
     }
     
@@ -23,8 +23,8 @@ export class UserService {
         return this.http.get<any[]>(this.dataBaseUri+this.serviceLink+`/${email}`);
     }
 
-    public setUserLocation(email:string, latitude:number, longitude:number){
-        return this.http.put<any>(this.dataBaseUri+this.serviceLink+"/location", { author: email, long: longitude, lat: latitude });
+    public setUserLocation(userEmail:string, lat:number, long:number){
+        return this.http.put<any>(this.dataBaseUri+this.serviceLink+"/location", { email: userEmail, longitude: long, latitude: lat });
     }
 
     public postUser(){

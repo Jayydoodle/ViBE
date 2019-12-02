@@ -32,6 +32,7 @@ export class MapComponent implements OnInit {
       zoom: 15,
       mapTypeId: 'roadmap'
     });
+    
     var user;
     
     this.userService.getUserByEmail(AuthenticationService.getEmail()).subscribe(userData =>{
@@ -44,7 +45,7 @@ export class MapComponent implements OnInit {
             lng: position.coords.longitude
           }
 
-          this.userService.setUserLocation(user[0].author, pos.lat, pos.lng).subscribe(x =>{
+          this.userService.setUserLocation(user[0].email, pos.lng, pos.lat).subscribe(x =>{
 
             console.log(x);
           });
@@ -52,42 +53,41 @@ export class MapComponent implements OnInit {
           infoWindow.setContent('You are here');
           infoWindow.open(this.map);
           this.map.setCenter(pos);
-          this.setHeatmapCurrent(pos);
+          this.setHeatmapCurrentUser(pos.lat, pos.lng);
           this.mapApi.changeMessage(this.map);
         });
     });
+    this.setHeatmapAllUsers();
   }
 
   public configureMap(){}
   public getMap(){
       return this.map;
   }
-
-  setHeatmapTest(pos): void{
-
+  setHeatmapCurrentUser(lat, long): void{
     var heatmapData = [
-      {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1},
-      {location: new google.maps.LatLng(pos.lat, pos.lng + .01), weight: 1},
-      {location: new google.maps.LatLng(pos.lat, pos.lng - .01), weight: 1}
+      {location: new google.maps.LatLng(lat, long), weight: 1}
     ];
-
     var heatmap = new google.maps.visualization.HeatmapLayer({
       data: heatmapData,
       radius: 50
     });
-
     heatmap.setMap(this.map);
   }
-  setHeatmapCurrent(pos): void{
-    var heatmapData = [
-      {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1}
-    ];
-    console.log(heatmapData)
-    var heatmap = new google.maps.visualization.HeatmapLayer({
-      data: heatmapData,
-      radius: 50
+  setHeatmapAllUsers(){
+
+    var users = [];
+    this.userService.getAllUsers().subscribe(userData =>{
+        
+      users = userData;
+
+      for(var i = 0; i < users.length; i++){
+
+          console.log(i);
+          if(users[i].location != null)
+            this.setHeatmapCurrentUser(users[i].location.longitude, users[i].location.latitude);
+      }
     });
-    heatmap.setMap(this.map);
   }
   public static showEvents(result, map): any{
     
