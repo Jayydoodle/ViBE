@@ -36,6 +36,9 @@ export class AuthenticationService {
     }
 
     private setSession(authResult){
+        if(authResult == null){
+            return;
+        }
         const expiresAt = moment().add(authResult.expiresIn, 'second');
 
         localStorage.setItem('id_token', authResult.idToken);
@@ -43,8 +46,11 @@ export class AuthenticationService {
     }
 
     register(newUser:User){
-        return this.http.post<{access_token: string}>(this.dataBaseUri+this.serviceLink+"/register", newUser)
+        return this.http.post<any>(this.dataBaseUri+this.serviceLink+"/register", newUser)
             .pipe(tap(res => {
+                if(!res.success){
+                    return;
+                }
                 this.login(newUser.email, newUser.password);
             }));
     }

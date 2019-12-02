@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const eventController_1 = require("./controllers/eventController");
 // tslint:disable-next-line:max-line-length
-const authenticateController_1 = require("./controllers/authenticateController.");
+const authenticateController_1 = require("./controllers/authenticateController");
 const userController_1 = require("./controllers/userController");
 class ApiRouter {
     constructor() {
