@@ -83,7 +83,7 @@ export class MapComponent implements OnInit {
 
       for(var i = 0; i < users.length; i++){
 
-          this.setHeatmapCurrentUser(users[i].location.latidude, users[i].location.longitude);
+          this.setHeatmapCurrentUser(users[i].location.latitude, users[i].location.longitude);
       }
     });
   }
