@@ -33,6 +33,10 @@ export class NavbarComponent implements OnInit {
  
   }
 
+  onClick_EventBtn() {
+    document.getElementById('modal-create').style.display='block';
+  }
+
   onClick_Logout() {
     // logout user from server 
     console.log("Logging out:", AuthenticationService.getEmail());
