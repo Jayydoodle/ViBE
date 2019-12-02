@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService} from "./../../services/user.service"
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { User } from './../../models/user';
+import { updateLocale } from 'moment';
 import { EventService } from 'src/app/services/event.service';
 
 
@@ -32,6 +34,15 @@ export class NavbarComponent implements OnInit {
     document.getElementById('modal-login').style.display='none';
    
   }
+<<<<<<< HEAD
+
+  swapButtons(){
+
+    
+  }
+
+=======
+>>>>>>> b6793c1b0c9f8853e19b3c513a9ca40f579d16fb
 }
 
 
