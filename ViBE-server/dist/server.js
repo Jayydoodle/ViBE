@@ -16,6 +16,14 @@ class Application {
     }
     // Starts the server on the port specified in the environment or on port 3000 if none specified.
     start() {
+        // const mongoose = require("mongoose");
+        // mongoose.Promise = Promise;
+        // const vb: VibeDatabase = new VibeDatabase();
+        // mongoose.connect(vb.getUri(), {useNewUrlParser: true , useUnifiedTopology: true})
+        //     .then(() => {
+        //         console.log("Successfully connected to MongoDB");
+        //     })
+        //     .catch((error: any) => console.log(error));
         this.buildRoutes();
         this.app.listen(this.port, () => console.log("Server listening on port " + this.port + "!"));
     }
