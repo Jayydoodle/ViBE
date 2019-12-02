@@ -3,6 +3,10 @@
     background-color: #343A40;
 }
 
+.about{
+    background-color: #343A40;
+}
+
 #id-modalLabel {
     color: #F0AD4E;
 }
@@ -97,8 +101,7 @@
 
 
   #about-us {
-    background-color: #74828F;
-    background-color: rbga(211, 211, 211, 0.8);
+    background-color: #343A40;
     border-radius: .57em;
     grid-area: us;
     margin-bottom: 2%;
@@ -107,8 +110,7 @@
   }
 
   #about-team {
-    background-color: #c0c0c0;
-    background-color: rbga(192, 192, 192, 0.8);
+    background-color: #343A40;
     border-radius: .57em;
     grid-area: team;
   }
@@ -116,8 +118,7 @@
   #about-contact {
     grid-area: contact;
     border-radius: .57em;
-    background-color: #cfcfcf;
-    background-color: rgba(207, 207, 207, 0.8);
+    background-color: #343A40;
     padding: 1em;
   }
 
@@ -145,7 +146,7 @@ align-items: center;
 height: 100vh;
 
 position: relative;
-background:#74828F ;
+background:#343A40 ;
     text-align: center;
     padding: 0 2em;}
 h1 {
@@ -287,4 +288,31 @@ transition: left 0.3s ease;
     justify-content: center;
   }
 
-  
+.vibeButton{
+    color: inherit;
+}
+
+.otherVibeButton{
+}
+.otherVibeButton:hover{
+    background-color : #F0AD4E;
+}
+
+.otherVibeButton:active:hover{
+    color: #F0AD4E;
+}
+
+.orange{
+    background-color: #F0AD4E;
+}
+
+.rounded{
+    border-radius: 0.57rem;
+}
+.vibeButton:hover{
+    background-color : #F0AD4E;
+}
+
+.vibeButton:active:hover{
+    color: #F0AD4E;
+}

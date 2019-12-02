@@ -48,27 +48,27 @@
 
                      <div  class="btn-group btn-group-toggle" data-toggle="buttons">
                    
-                  <label class="btn btn-primary active">
+                  <label class="btn btn-primary active vibeButton">
                     <input type="radio" name="options" id="option1" value ="party" autocomplete="off" checked>Party
                   </label>
-                  <label class="btn btn-primary">
+                  <label class="btn btn-primary vibeButton">
                     <input type="radio" name="options" id="option2" value ="Fundraiser"autocomplete="off">Fundraiser
                   </label>
-                  <label class="btn btn-primary">
+                  <label class="btn btn-primary vibeButton">
                     <input type="radio" name="options" id="option3" value="sports" autocomplete="off" >Sports
                   </label>
-                    <label class="btn btn-primary">
+                    <label class="btn btn-primary vibeButton">
                     <input type="radio" name="options" id="option3" value = "concert"autocomplete="off">Concert
                   </label>
                 </div>
                   </div>
                   <div class="form-group">
-                     <textarea class="form-control" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"></textarea><br>
-                         <textarea class="form-control" id = "Description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
+                     <textarea class="form-control rounded orange" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"></textarea><br>
+                         <textarea class="form-control rounded orange" id = "Description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
                         </div>
                       </form>
                      <div class="modal-footer">
-                  <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#exampleModalLong" (click)="createEvent()">Create Event</button>
+                  <button type="button" class="btn btn-primary otherVibeButton" data-toggle="modal" data-target="#exampleModalLong" (click)="createEvent()">Create Event</button>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
-            <div class="modal-body p-4" id="result">
+            <div class="modal-body p-4 about" id="result">
           <div id='about-us'>
             <h1>Growing Together</h1>
                &nbsp;
@@ -111,7 +111,7 @@
           </section>
 
   <!-- Main -->
-  <main class="et-main">
+  <main class="et-main about">
     <section class="et-slide" id="tab-ja">
       <h1>Jason Allen</h1>
       <h3>Chief Executive Officer</h3>
