@@ -32,6 +32,17 @@ class EventController {
         // // closes connection
         res.send(req.body);
     }
+    getEventbyCategory(req, res) {
+        EventController.database.connect(() => {
+            const Users = EventController.database.getClient().db("vibe").collection("event")
+                .find({ category: req.params.category })
+                // .find({email : req.params.userEmail})
+                .toArray()
+                .then((result) => {
+                res.json(result);
+            });
+        });
+    }
 }
 exports.EventController = EventController;
 EventController.database = new vibe_database_1.VibeDatabase();

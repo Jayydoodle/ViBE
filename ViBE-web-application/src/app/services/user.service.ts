@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { User } from "../models/user";
 
 //import { environment } from '@environments/environment';
 //import { User } from '@app/_models';
@@ -20,6 +21,10 @@ export class UserService {
     
     public getUserByEmail(email:string){
         return this.http.get<any[]>(this.dataBaseUri+this.serviceLink+`/${email}`);
+    }
+
+    public setUserLocation(email:string, latitude:number, longitude:number){
+        return this.http.put<any>(this.dataBaseUri+this.serviceLink+"/location", { author: email, long: longitude, lat: latitude });
     }
 
     public postUser(){

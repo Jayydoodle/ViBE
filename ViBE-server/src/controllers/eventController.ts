@@ -48,4 +48,17 @@ export class EventController {
         // // closes connection
         res.send(req.body);
     }
+
+public getEventbyCategory(req: express.Request, res: express.Response): void {
+    EventController.database.connect(() => {
+        const Users = EventController.database.getClient().db("vibe").collection("event")
+          .find({category : req.params.category})
+          // .find({email : req.params.userEmail})
+          .toArray()
+          .then((result: any) => {
+            res.json(result);
+          });
+    });
+  }
+
 }

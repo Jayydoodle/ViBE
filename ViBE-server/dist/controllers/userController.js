@@ -22,16 +22,9 @@ class UserController {
             });
         });
     }
-    // function to create event
-    createUser(req, res) {
-        UserController.database.connect(() => {
-            UserController.database.getClient().db("vibe").collection("user").insertOne(req.body);
-            res.send(req.body);
-        });
-    }
     UpdateUserLocation(req, res) {
         UserController.database.connect(() => {
-            UserController.database.getClient().db("vibe").collection("user").updateOne({ author: req.body.author }, { $set: { long: req.body.long, lat: req.body.lat }
+            UserController.database.getClient().db("vibe").collection("user").updateOne({ email: req.body.email }, { $set: { long: req.body.long, lat: req.body.lat }
             })
                 .then(function (result) {
                 console.log(result + "updated");
