@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { GooglemapApiService } from 'src/app/googlemap-api.service';
 import { MapComponent } from '../map/map.component';
+import {Event} from '../../models/event';
 
 
 @Component({
@@ -31,8 +32,8 @@ export class EventsComponent implements OnInit {
     event.firstName = "shabir";
     event.lat="111";
     event.long="222";
-    event.title=this.desc;
-    event.description=this.title;
+    // event.title=this.desc;
+    // event.description=this.title;
     event.category="sports"
 
     this.eventService.createEvent(event)

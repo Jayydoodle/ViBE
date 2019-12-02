@@ -303,7 +303,7 @@ transition: left 0.3s ease;
 }
 
 .orange{
-    background-color: #F0AD4E;
+    background-color: rgba(239, 145, 4, 0.1);
 }
 
 .rounded{

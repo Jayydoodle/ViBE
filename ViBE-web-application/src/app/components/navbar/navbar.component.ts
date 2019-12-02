@@ -27,8 +27,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-=======
    desc:string='';
    title:string='';  
 
@@ -124,7 +122,6 @@ export class NavbarComponent implements OnInit {
       })
   }
 
->>>>>>> d8a3381771d00b9cc6ed5c2e2bd42cbbc2cc50e1
   onClick_Login() {
     console.log("login was clicked");
     document.getElementById('modal-login').style.display='block';
@@ -135,6 +132,11 @@ export class NavbarComponent implements OnInit {
     console.log("modal close clicked");
     document.getElementById('modal-login').style.display='none';
    
+  }
+  
+  onClick_EventBtn() {
+    document.getElementById('modal-create').style.display='block';
+    document.getElementById('id_navbar').style.filter='blur(5px)';
   }
 
   onClick_Logout() {
