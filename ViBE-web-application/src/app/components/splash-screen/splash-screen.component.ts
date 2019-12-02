@@ -36,7 +36,7 @@ export class SplashScreenComponent implements OnInit {
     };
 
     this.userExistsRegister = false;
-    
+
     console.log(newUser);
     this.authService.register(newUser)
      .subscribe((result)=>{

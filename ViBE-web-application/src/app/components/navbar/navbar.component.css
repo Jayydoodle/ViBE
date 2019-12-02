@@ -1,3 +1,4 @@
+
 .custom-ting {
     background-color: #343A40;
 }
@@ -5,13 +6,17 @@
 #id-modalLabel {
     color: #F0AD4E;
 }
+
+#myModal{
+  
+}
 #modal-create {
   display: none; /* Hidden by default */
   z-index: 1; /* Sit on top */
   left: 50px;
   top: 100px;
 
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Enable scroll if needed */
  
 }
 .modal-header {
@@ -63,6 +68,7 @@
 
 .modal-full .modal-content {
     min-height: 100vh;
+    background-color: #F0AD4E;
 }
 
 /* about page css */
@@ -92,8 +98,9 @@
     min-height: auto;
   }
 
+
   #about-us {
-    background-color: #343A40;
+    background-color: #74828F;
     background-color: rbga(211, 211, 211, 0.8);
     border-radius: .57em;
     grid-area: us;
@@ -141,7 +148,7 @@ align-items: center;
 height: 100vh;
 
 position: relative;
-background:#343A40 ;
+background:#74828F ;
     text-align: center;
     padding: 0 2em;}
 h1 {
@@ -194,7 +201,7 @@ h3 {
   letter-spacing: .22em;
   text-align: center;
   word-spacing: .21em;
-  color: rgb(255, 255, 255);
+  color: whitesmoke;
 }
 .et-slide > p {
 
@@ -226,12 +233,7 @@ width: 100%;
 height: 70px;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 background: white;
-z-index: 10;
-&--top {
-    position: fixed;
-    top: 0;
-}
-}
+z-index: 10;}
 
 .et-hero-tab {
 display: flex;
@@ -247,7 +249,7 @@ letter-spacing: 0.1rem;
 
 .et-hero-tab:hover {
     color: #F0AD4E;
-background: #343A40;
+background: rgb(34, 86, 138);
     transition: all 0.5s ease;
 }
 
@@ -260,20 +262,7 @@ background: #66B1F1;
 transition: left 0.3s ease;
 }
 
-@media (min-width: 800px) {
-  .et-hero-tabs, .et-slide {
-    h1 {
-        font-size: 3rem;
-    }
-    
-    h3 {
-        font-size: 1rem;
-    }
-  }
-  .et-hero-tab {
-      font-size: 1rem;
-  }
-}
+
   
   /* visited link */
   a:visited {
@@ -300,3 +289,5 @@ transition: left 0.3s ease;
     flex-direction: row;
     justify-content: center;
   }
+
+  
