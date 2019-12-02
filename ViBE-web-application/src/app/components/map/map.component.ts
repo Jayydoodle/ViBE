@@ -89,6 +89,9 @@ export class MapComponent implements OnInit {
     
     var markers = [];
     var marker;
+
+    
+
     for(var i = 0; i < result.length; i++){
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(result[i].latitude, result[i].longitude),
@@ -96,13 +99,19 @@ export class MapComponent implements OnInit {
           title: result[i].title
         });
         markers.push(marker);
-       /* google.maps.event.addListener(marker, 'click', (function(marker, i) {
+       google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
+              var contentString = '<div id="content">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<h1 id="firstHeading" class="firstHeading">'+result[i].title+'</h1>'+
+              '<div id="bodyContent">'+
+              '<p>'+result[i].description+'</p>';
               var infowindow = new google.maps.InfoWindow;
-              infowindow.setContent(result[i]);
+              infowindow.setContent(contentString);
               infowindow.open(map, marker);
           }
-        })(marker, i));*/
+        })(marker, i));
     }
 
     return markers;
