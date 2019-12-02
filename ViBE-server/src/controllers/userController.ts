@@ -28,21 +28,11 @@ export class UserController {
     });
   }
 
-    // function to create event
-    public createUser(req: express.Request, res: express.Response): void {
-      UserController.database.connect(() => {
-      UserController.database.getClient().db("vibe").collection("user").insertOne(
-        req.body
-       );
-      res.send(req.body);
-      });
-    }
-
   public UpdateUserLocation(req: express.Request, res: express.Response): void {
 
     UserController.database.connect(() => {
         UserController.database.getClient().db("vibe").collection("user").updateOne(
-          { author: req.body.author},
+          { email: req.body.email},
           { $set: { long: req.body.long, lat: req.body.lat}
           })
 
