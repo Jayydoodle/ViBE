@@ -2,7 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { GooglemapApiService } from 'src/app/googlemap-api.service';
 import { MapComponent } from '../map/map.component';
+<<<<<<< HEAD
 import {Event} from '../../models/event';
+=======
+import { User } from 'src/app/models/user';
+import { Event } from 'src/app/models/event';
+>>>>>>> 235a25c281e022d3d1ef7441976210aeb2904b75
 
 
 @Component({
@@ -26,15 +31,33 @@ export class EventsComponent implements OnInit {
   }
 
   createEvent()
-  { 
-    let event = new Event;
+  {
+    var event = new Event();
   
+<<<<<<< HEAD
     event.firstName = "shabir";
     event.lat="111";
     event.long="222";
     // event.title=this.desc;
     // event.description=this.title;
     event.category="sports"
+=======
+    event.title = (<HTMLInputElement>document.getElementById("title")).value;
+    event.description = (<HTMLInputElement>document.getElementById("description")).value;
+
+    var ele = document.getElementsByTagName('input'); 
+              
+    for(var i = 0; i < ele.length; i++) { 
+      if(ele[i].type="radio") { 
+        if(ele[i].checked) {
+          event.category = ele[i].value;
+        }
+      } 
+    } 
+
+    event.latitude = this.autoComplete.getPlace().geometry.location.lat();
+    event.longitude = this.autoComplete.getPlace().geometry.location.lng(); 
+>>>>>>> 235a25c281e022d3d1ef7441976210aeb2904b75
 
     this.eventService.createEvent(event)
     .subscribe((result)=>{
@@ -61,6 +84,11 @@ export class EventsComponent implements OnInit {
         }
        this.markers = MapComponent.showEvents(result, this.map);
     })
+  }
+  onClick_CloseModal() {
+    console.log("modal close clicked");
+    document.getElementById('modal-login').style.display='none';
+   
   }
   removeMarkers(){
     MapComponent.clearMarkers(this.markers);

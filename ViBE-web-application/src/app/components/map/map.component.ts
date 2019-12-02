@@ -59,8 +59,6 @@ export class MapComponent implements OnInit {
     });
     this.setHeatmapAllUsers();
   }
-
-  public configureMap(){}
   public getMap(){
       return this.map;
   }
