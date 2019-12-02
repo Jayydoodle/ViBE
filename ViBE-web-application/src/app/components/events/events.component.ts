@@ -2,8 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { GooglemapApiService } from 'src/app/googlemap-api.service';
 import { MapComponent } from '../map/map.component';
+<<<<<<< HEAD
+import {Event} from '../../models/event';
+=======
 import { User } from 'src/app/models/user';
 import { Event } from 'src/app/models/event';
+>>>>>>> 235a25c281e022d3d1ef7441976210aeb2904b75
 
 
 @Component({

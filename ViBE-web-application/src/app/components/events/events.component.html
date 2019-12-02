@@ -8,7 +8,7 @@
       <a class="dropdown-item" href="#" (click)="OnClick_GetEvents('concert')">Concert</a>
     </div>
 </li>
-  <!--CREATE EVENT MODAL-->
+  <!--CREATE EVENT MODAL--> 
    <div class="modal" id="modal-create" style="display:none">
       <div class="modal-dialog" role="document">
         <div class="modal-content custom-ting">
@@ -39,9 +39,9 @@
           </div>
             </div>
             <div class="form-group">
-                <input type="text" id="locationAutoComplete" class="form-control rounded orange" placeholder="Location" [(ngModel)]="location" [ngModelOptions]="{standalone: true}">
-               <textarea type = "text" class="form-control rounded orange" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"></textarea><br>
-                   <textarea class="form-control rounded orange" id = "description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
+                <input type="text" id="locationAutoComplete" class="form-control rounded orange" placeholder="Location" [(ngModel)]="location" [ngModelOptions]="{standalone: true}"><br>
+                <input type = "text" class="form-control rounded orange" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"><br>
+                <textarea class="form-control rounded orange" id = "Description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
                   </div>
                 </form>
                <div class="modal-footer">
