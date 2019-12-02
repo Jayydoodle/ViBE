@@ -18,6 +18,7 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
 import { EventService } from './services/event.service';
 import { UserService } from './services/user.service';
 import { EventsComponent } from './components/events/events.component';
+import { GooglemapApiService } from './googlemap-api.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { EventsComponent } from './components/events/events.component';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule,EventService,UserService],
+  providers: [HttpClientModule,EventService,UserService,EventService,GooglemapApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

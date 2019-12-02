@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
+import { GooglemapApiService } from 'src/app/googlemap-api.service';
+import { MapComponent } from '../map/map.component';
+
 
 @Component({
   selector: 'app-events',
@@ -8,23 +11,21 @@ import { EventService } from 'src/app/services/event.service';
 })
 export class EventsComponent implements OnInit {
 
-  constructor(private eventService:EventService) { }
+  map: google.maps.Map;
+  constructor(private eventService:EventService, private mapApi: GooglemapApiService ) {
+  }
 
   ngOnInit() {
+    
+    this.mapApi.currentMessage.subscribe(x => this.map = x);
   }
 
   OnClick_GetEvents(eventCategory){
         
     this.eventService.getEventsByCategory(eventCategory)
     .subscribe((result)=>{
-      var i=0;
-      alert("we here");
-      while(result[i])
-      {
-        var x =result[i];
-        console.log(JSON.stringify(x));
-        i++;
-      }
+        
+       MapComponent.showEvents(result, this.map);
     })
   }
 }
