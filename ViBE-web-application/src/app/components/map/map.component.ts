@@ -83,7 +83,7 @@ export class MapComponent implements OnInit {
 
       for(var i = 0; i < users.length; i++){
 
-          this.setHeatmapCurrentUser(users[i].location.latitude, users[i].location.longitude);
+          this.setHeatmapCurrentUser(users[i].location.longitude, users[i].location.latitude);
       }
     });
   }
@@ -101,13 +101,6 @@ export class MapComponent implements OnInit {
     }
 
     return markers;
-
- /* google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    return function() {
-      infowindow.setContent(locations[i][0]);
-      infowindow.open(map, marker);
-    }
-  })(marker, i));*/
   }
   public static clearMarkers(markers){
 

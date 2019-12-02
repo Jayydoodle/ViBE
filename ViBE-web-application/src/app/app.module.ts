@@ -19,7 +19,8 @@ import { EventService } from './services/event.service';
 import { UserService } from './services/user.service';
 import { EventsComponent } from './components/events/events.component';
 import { GooglemapApiService } from './googlemap-api.service';
-
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { GooglemapApiService } from './googlemap-api.service';
     MatIconModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    GooglePlaceModule
   ],
   providers: [HttpClientModule,EventService,UserService,EventService,GooglemapApiService],
   bootstrap: [AppComponent]
