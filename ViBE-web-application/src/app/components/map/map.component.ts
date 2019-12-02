@@ -88,22 +88,23 @@ export class MapComponent implements OnInit {
     });
     heatmap.setMap(this.map);
   }
-  public hide(map){
-    console.log(map.getCenter());
-  }
   public static showEvents(result, map){
     
-    let mapPoints = new Array<any>();
+    var markers = [];
+    var marker;
     for(var i = 0; i < result.length; i++){
-        mapPoints.push({location: new google.maps.LatLng(result[i].latitude, result[i].longitude), weight: 1});
-        
-        console.log(mapPoints[i]);
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(result[i].latitude, result[i].longitude),
+          map: map
+        });
+        markers.push(marker);
     }
 
-    var heatmap = new google.maps.visualization.HeatmapLayer({
-      data: mapPoints,
-      radius: 50
-    });
-    heatmap.setMap(map);
+ /* google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    return function() {
+      infowindow.setContent(locations[i][0]);
+      infowindow.open(map, marker);
+    }
+  })(marker, i));*/
   }
 }
