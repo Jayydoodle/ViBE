@@ -8,3 +8,45 @@
       <a class="dropdown-item" href="#" (click)="OnClick_GetEvents('concert')">Concert</a>
     </div>
 </li>
+  <!--CREATE EVENT MODAL-->
+   <div class="modal" id="modal-create" style="display:none">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content custom-ting">
+          <div class="modal-header custom-ting">
+            <h5 class="modal-title text-warning">Create an Event</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClick_CloseModal()">
+                <span onclick="document.getElementById('modal-create').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </button>
+          </div>
+
+          <form>
+            <div class="form-group">
+
+               <div  class="btn-group btn-group-toggle" data-toggle="buttons">
+             
+            <label class="btn btn-primary active vibeButton">
+              <input type="radio" name="options" id="option1" value ="party" autocomplete="off" checked>Party
+            </label>
+            <label class="btn btn-primary vibeButton">
+              <input type="radio" name="options" id="option2" value ="Fundraiser"autocomplete="off">Fundraiser
+            </label>
+            <label class="btn btn-primary vibeButton">
+              <input type="radio" name="options" id="option3" value="sports" autocomplete="off" >Sports
+            </label>
+              <label class="btn btn-primary vibeButton">
+              <input type="radio" name="options" id="option3" value = "concert"autocomplete="off">Concert
+            </label>
+          </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="locationAutoComplete" class="form-control rounded orange" placeholder="Location" [(ngModel)]="location" [ngModelOptions]="{standalone: true}">
+               <input type = "text" class="form-control rounded orange" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"><br>
+                   <textarea class="form-control rounded orange" id = "Description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
+                  </div>
+                </form>
+               <div class="modal-footer">
+            <button type="button" class="btn btn-primary otherVibeButton" data-toggle="modal" data-target="#exampleModalLong" (click)="createEvent()">Create Event</button>
+          </div>
+        </div>
+      </div>
+    </div> 
