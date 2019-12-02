@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { TestComponent } from './components/test/test.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +15,9 @@ import { MapComponent } from './components/map/map.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { EventService } from './services/event.service';
+import { UserService } from './services/user.service';
+import { EventsComponent } from './components/events/events.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
     TestComponent,
     NavbarComponent,
     MapComponent,
-    SplashScreenComponent
+    SplashScreenComponent,
+    EventsComponent
   ],
   imports: [
     JwtModule.forRoot({
@@ -47,7 +50,7 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,EventService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

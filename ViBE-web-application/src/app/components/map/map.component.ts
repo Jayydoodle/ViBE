@@ -17,7 +17,6 @@ export class MapComponent implements OnInit {
   constructor(private userService: UserService){}
 
   ngOnInit(): void {
-
     var newarkDE = new google.maps.LatLng(39.6780, -75.7506);
     
     var infoWindow = new google.maps.InfoWindow;
@@ -30,36 +29,34 @@ export class MapComponent implements OnInit {
     var user = new User();
     
     this.userService.getUserByEmail("Shabir").subscribe(userData =>{
+        
         user = userData as User;
-        console.log(user[0].long);
-        console.log(user[0].lat);
 
-        this.userService
+        navigator.geolocation.getCurrentPosition(position => {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          }
 
+          this.userService.setUserLocation(user[0].author, pos.lat, pos.lng).subscribe(x =>{
+
+            console.log(x);
+          });
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('You are here');
+          infoWindow.open(this.map);
+          this.map.setCenter(pos);
+          this.setHeatmapCurrent(pos);
+        });
     });
-
-    this.setHeatmapTest();
-
-    navigator.geolocation.getCurrentPosition(position => {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      }
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('You are here');
-      infoWindow.open(this.map);
-      this.map.setCenter(pos);
-      this.setHeatmapCurrent(pos);
-    });
-    
-
   }
-  setHeatmapTest(): void{
+
+  setHeatmapTest(pos): void{
 
     var heatmapData = [
-      {location: new google.maps.LatLng(39.6780, -75.76), weight: 1},
-      {location: new google.maps.LatLng(39.6780, -75.7506), weight: 1},
-      {location: new google.maps.LatLng(39.6780, -75.74), weight: 1}
+      {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1},
+      {location: new google.maps.LatLng(pos.lat, pos.lng + .01), weight: 1},
+      {location: new google.maps.LatLng(pos.lat, pos.lng - .01), weight: 1}
     ];
 
     var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -70,19 +67,17 @@ export class MapComponent implements OnInit {
     heatmap.setMap(this.map);
   }
   setHeatmapCurrent(pos): void{
+    var heatmapData = [
+      {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1}
+    ];
 
-      var heatmapData = [
-        {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1},
-        {location: new google.maps.LatLng(pos.lat, pos.lng + .01), weight: 1},
-        {location: new google.maps.LatLng(pos.lat, pos.lng - .01), weight: 1}
-      ];
-
-      var heatmap = new google.maps.visualization.HeatmapLayer({
-        data: heatmapData,
-        radius: 50
-      });
-
-      heatmap.setMap(this.map);
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+      data: heatmapData,
+      radius: 50
+    });
+    heatmap.setMap(this.map);
   }
-
+  public static setMap(){
+    console.log();
+  }
 }
