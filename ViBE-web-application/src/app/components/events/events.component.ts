@@ -28,6 +28,7 @@ export class EventsComponent implements OnInit {
 
   createEvent()
   {
+  
     var event = new Event();
   
     event.title = (<HTMLInputElement>document.getElementById("title")).value;
@@ -49,7 +50,12 @@ export class EventsComponent implements OnInit {
     this.eventService.createEvent(event)
     .subscribe((result)=>{
       console.log("we made it??");
+
+
+      document.getElementById('modal-create').style.display='none';
     })
+
+    
   }
 
   locationAutoComplete(){
