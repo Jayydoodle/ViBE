@@ -26,7 +26,7 @@ class ApiRouter {
         // Event
         const eventLink = "/event";
         this.router.get(eventLink, this.eventController.getAllEvents);
-        this.router.post(eventLink + "/create_event", this.eventController.createEvent);
+        this.router.post(eventLink, this.eventController.createEvent);
         this.router.get(eventLink + "/:category", this.eventController.getEventbyCategory);
         // this.router.get("/event", this.eventController.getAllEvents);
         // Authentication
