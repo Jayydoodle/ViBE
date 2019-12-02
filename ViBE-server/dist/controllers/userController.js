@@ -2,17 +2,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const vibe_database_1 = require("../vibe.database");
 class UserController {
-    // function to create event
     getAllUsers(req, res) {
         UserController.database.connect(() => {
-            const Users = UserController.database.getClient().db("vibe").collection("user").find({});
-            function iterateFunc(doc) {
-                console.log(doc);
-            }
-            function errorFunc(error) {
-                console.log(error);
-            }
-            Users.forEach(iterateFunc, errorFunc);
+            const Users = UserController.database.getClient().db("vibe").collection("user")
+                .find({})
+                .toArray()
+                .then((result) => {
+                res.json(result);
+            });
+        });
+    }
+    getUserByEmail(req, res) {
+        UserController.database.connect(() => {
+            const Users = UserController.database.getClient().db("vibe").collection("user")
+                .find({ author: req.params.userEmail })
+                // .find({email : req.params.userEmail})
+                .toArray()
+                .then((result) => {
+                res.json(result);
+            });
         });
     }
     UpdateUserLocation(req, res) {

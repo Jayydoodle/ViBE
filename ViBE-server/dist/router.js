@@ -21,15 +21,18 @@ class ApiRouter {
         // User
         const userLink = "/user";
         this.router.put(userLink + "/location", this.userController.UpdateUserLocation);
+        this.router.get(userLink, this.userController.getAllUsers);
+        this.router.get(userLink + "/:userEmail", this.userController.getUserByEmail);
         // Event
         const eventLink = "/event";
         this.router.get(eventLink, this.eventController.getAllEvents);
         this.router.post(eventLink + "/create_event", this.eventController.createEvent);
+        this.router.get(eventLink + "/:category", this.eventController.getEventbyCategory);
         // this.router.get("/event", this.eventController.getAllEvents);
         // Authentication
         const authLink = "/authenticate";
         this.router.post(authLink + "/login", this.authController.login);
-        this.router.post(authLink + "/register", this.authController.screwUp);
+        this.router.post(authLink + "/register", this.authController.register);
         return this.router;
     }
 }
