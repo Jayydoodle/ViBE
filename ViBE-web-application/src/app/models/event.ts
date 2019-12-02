@@ -1,13 +1,10 @@
 
 
 export class Event {
-    id: number;
-    username: string;
-    firstName: string;
-    lastName: string;
-    long:string;
-    lat:string;   
+    title: string;
+    category:string;
     description:string;
-    title:string;
-    category:string
+    latitude: number;
+    longitude: number;
+    
 }

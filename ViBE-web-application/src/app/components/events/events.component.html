@@ -28,20 +28,20 @@
               <input type="radio" name="options" id="option1" value ="party" autocomplete="off" checked>Party
             </label>
             <label class="btn btn-primary vibeButton">
-              <input type="radio" name="options" id="option2" value ="Fundraiser"autocomplete="off">Fundraiser
+              <input type="radio" name="options" id="option2" value ="fundraiser"autocomplete="off">Fundraiser
             </label>
             <label class="btn btn-primary vibeButton">
               <input type="radio" name="options" id="option3" value="sports" autocomplete="off" >Sports
             </label>
               <label class="btn btn-primary vibeButton">
-              <input type="radio" name="options" id="option3" value = "concert"autocomplete="off">Concert
+              <input type="radio" name="options" id="option4" value = "concert"autocomplete="off">Concert
             </label>
           </div>
             </div>
             <div class="form-group">
                 <input type="text" id="locationAutoComplete" class="form-control rounded orange" placeholder="Location" [(ngModel)]="location" [ngModelOptions]="{standalone: true}">
-               <input type = "text" class="form-control rounded orange" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"><br>
-                   <textarea class="form-control rounded orange" id = "Description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
+               <textarea type = "text" class="form-control rounded orange" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"></textarea><br>
+                   <textarea class="form-control rounded orange" id = "description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
                   </div>
                 </form>
                <div class="modal-footer">
