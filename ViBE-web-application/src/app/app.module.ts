@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 import { TestComponent } from './components/test/test.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +21,6 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
   declarations: [
     AppComponent,
     TestComponent,
-    SidenavComponent,
     NavbarComponent,
     MapComponent,
     SplashScreenComponent
