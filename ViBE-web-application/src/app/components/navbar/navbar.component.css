@@ -145,7 +145,7 @@ height: 100vh;
 position: relative;
 background:#343A40 ;
     text-align: center;
-    padding: 0 2em;
+    padding: 0 2em;}
 h1 {
     font-size: 2rem;
     margin: 0;
@@ -156,7 +156,7 @@ h3 {
     letter-spacing: 0.3rem;
     opacity: 0.6;
 }
-}
+
 
 .et-hero-tabs > h1 {
   font-family: 'Georgia';
