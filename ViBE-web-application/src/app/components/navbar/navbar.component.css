@@ -228,17 +228,7 @@ width: 100%;
 height: 70px;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 background: white;
-<<<<<<< HEAD
-z-index: 10;
-
-&--top {
-    position: fixed;
-    top: 0;
-}
-}
-=======
 z-index: 10;}
->>>>>>> 78fdc6469cf9fffcac1ff76320ad9dc3892c6db8
 
 .et-hero-tab {
 display: flex;
