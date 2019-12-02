@@ -16,6 +16,8 @@ import { MapComponent } from './components/map/map.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { EventService } from './services/event.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,7 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,EventService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
