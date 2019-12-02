@@ -23,6 +23,10 @@ export class UserService {
         return this.http.get<any>(this.dataBaseUri+this.serviceLink+`/${email}`);
     }
 
+    public setUserLocation(email:string, latitude:number, longitude:number){
+        return this.http.put<any>(this.dataBaseUri+this.serviceLink+"/location", { author: email, long: longitude, lat: latitude });
+    }
+
     public postUser(){
         return this.http.post(this.dataBaseUri+"/api", null);
     }
