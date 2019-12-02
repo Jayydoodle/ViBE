@@ -6,6 +6,10 @@
 #id-modalLabel {
     color: #F0AD4E;
 }
+
+#myModal{
+  
+}
 #modal-create {
   display: none; /* Hidden by default */
   z-index: 1; /* Sit on top */
@@ -64,6 +68,7 @@
 
 .modal-full .modal-content {
     min-height: 100vh;
+    background-color: #F0AD4E;
 }
 
 /* about page css */
