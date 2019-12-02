@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
    this.eventService.getEventsByCategory("sports")
           .subscribe((result)=>{
             var i=0;
+            alert("we here");
             while(result[i])
             {
               var x =result[i];

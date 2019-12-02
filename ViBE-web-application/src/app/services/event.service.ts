@@ -22,4 +22,5 @@ export class EventService {
         return this.http.get<any[]>(this.dataBaseUri+this.serviceLink+`/${category}`);
     }
 
+
 }
