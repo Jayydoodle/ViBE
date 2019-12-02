@@ -12,6 +12,7 @@ import { MapComponent } from '../map/map.component';
 export class EventsComponent implements OnInit {
 
   map: google.maps.Map;
+  markers: any;
   constructor(private eventService:EventService, private mapApi: GooglemapApiService ) {
   }
 
@@ -24,8 +25,14 @@ export class EventsComponent implements OnInit {
         
     this.eventService.getEventsByCategory(eventCategory)
     .subscribe((result)=>{
-        
-       MapComponent.showEvents(result, this.map);
+
+        if(this.markers != null){
+          this.removeMarkers();
+        }
+       this.markers = MapComponent.showEvents(result, this.map);
     })
+  }
+  removeMarkers(){
+    MapComponent.clearMarkers(this.markers);
   }
 }

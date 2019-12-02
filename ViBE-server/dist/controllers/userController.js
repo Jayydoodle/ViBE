@@ -5,7 +5,7 @@ class UserController {
     getAllUsers(req, res) {
         UserController.database.connect(() => {
             const Users = UserController.database.getClient().db("vibe").collection("user")
-                .find({})
+                .find()
                 .toArray()
                 .then((result) => {
                 res.json(result);
@@ -24,7 +24,8 @@ class UserController {
     }
     UpdateUserLocation(req, res) {
         UserController.database.connect(() => {
-            UserController.database.getClient().db("vibe").collection("user").updateOne({ email: req.body.email }, { $set: { long: req.body.long, lat: req.body.lat }
+            console.log(req.body);
+            UserController.database.getClient().db("vibe").collection("user").updateOne({ email: req.body.email }, { $set: { "location.longitude": req.body.longitude, "location.latitude": req.body.latitude }
             })
                 .then(function (result) {
                 console.log(result + "updated");

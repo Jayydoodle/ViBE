@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from "./../../models/user";
+import { AuthenticationService } from '../../services/authentication.service';
 import { GooglemapApiService } from 'src/app/googlemap-api.service';
 
 @Component({
@@ -31,11 +32,12 @@ export class MapComponent implements OnInit {
       zoom: 15,
       mapTypeId: 'roadmap'
     });
-    var user = new User();
     
-    this.userService.getUserByEmail("Shabir").subscribe(userData =>{
+    var user;
+    
+    this.userService.getUserByEmail(AuthenticationService.getEmail()).subscribe(userData =>{
         
-        user = userData[0];
+        user = userData;
 
         navigator.geolocation.getCurrentPosition(position => {
           var pos = {
@@ -43,7 +45,7 @@ export class MapComponent implements OnInit {
             lng: position.coords.longitude
           }
 
-          this.userService.setUserLocation(user[0].author, pos.lat, pos.lng).subscribe(x =>{
+          this.userService.setUserLocation(user[0].email, pos.lng, pos.lat).subscribe(x =>{
 
             console.log(x);
           });
@@ -51,54 +53,54 @@ export class MapComponent implements OnInit {
           infoWindow.setContent('You are here');
           infoWindow.open(this.map);
           this.map.setCenter(pos);
-          this.setHeatmapCurrent(pos);
+          this.setHeatmapCurrentUser(pos.lat, pos.lng);
           this.mapApi.changeMessage(this.map);
         });
     });
+    this.setHeatmapAllUsers();
   }
 
   public configureMap(){}
   public getMap(){
       return this.map;
   }
-
-  setHeatmapTest(pos): void{
-
+  setHeatmapCurrentUser(lat, long): void{
     var heatmapData = [
-      {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1},
-      {location: new google.maps.LatLng(pos.lat, pos.lng + .01), weight: 1},
-      {location: new google.maps.LatLng(pos.lat, pos.lng - .01), weight: 1}
+      {location: new google.maps.LatLng(lat, long), weight: 1}
     ];
-
-    var heatmap = new google.maps.visualization.HeatmapLayer({
-      data: heatmapData,
-      radius: 50
-    });
-
-    heatmap.setMap(this.map);
-  }
-  setHeatmapCurrent(pos): void{
-    var heatmapData = [
-      {location: new google.maps.LatLng(pos.lat, pos.lng), weight: 1}
-    ];
-    console.log(heatmapData)
     var heatmap = new google.maps.visualization.HeatmapLayer({
       data: heatmapData,
       radius: 50
     });
     heatmap.setMap(this.map);
   }
-  public static showEvents(result, map){
+  setHeatmapAllUsers(){
+
+    var users = [];
+    this.userService.getAllUsers().subscribe(userData =>{
+        
+      users = userData;
+
+      for(var i = 0; i < users.length; i++){
+
+          this.setHeatmapCurrentUser(users[i].location.latitude, users[i].location.longitude);
+      }
+    });
+  }
+  public static showEvents(result, map): any{
     
     var markers = [];
     var marker;
     for(var i = 0; i < result.length; i++){
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(result[i].latitude, result[i].longitude),
-          map: map
+          map: map,
+          title: result[i].title
         });
         markers.push(marker);
     }
+
+    return markers;
 
  /* google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
@@ -106,5 +108,12 @@ export class MapComponent implements OnInit {
       infowindow.open(map, marker);
     }
   })(marker, i));*/
+  }
+  public static clearMarkers(markers){
+
+    for(var i = 0; i < markers.length; i++){
+
+      markers[i].setMap(null);
+    }
   }
 }
