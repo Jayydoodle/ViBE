@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import {} from 'googlemaps';
 import { UserService } from '../../services/user.service';
+import { User } from "./../../models/user";
 
 @Component({
   selector: 'app-map',
@@ -26,8 +27,16 @@ export class MapComponent implements OnInit {
       zoom: 15,
       mapTypeId: 'roadmap'
     });
-  
-    console.log("this rannnnnnnnnnnn" + this.userService.getUsers());
+    var user = new User();
+    
+    this.userService.getUserByEmail("Shabir").subscribe(userData =>{
+        user = userData as User;
+        console.log(user[0].long);
+        console.log(user[0].lat);
+
+        this.userService
+
+    });
 
     this.setHeatmapTest();
 
