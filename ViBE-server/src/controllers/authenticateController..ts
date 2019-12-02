@@ -40,9 +40,21 @@ export class AuthenticateController {
         const email = req.body.email;
         const password = req.body.password;
 
-        // Check if duplicate user exists
-        if (this.validateUser(email, password)) {
-            console.log();
-        }
+        return AuthenticateController.database.connect(() => {
+            // Check if duplicate user exists
+            const result = AuthenticateController.database.getClient()
+                .db("vibe")
+                .collection("user")
+                .findOne({email});
+
+            if (result == null) {
+                AuthenticateController.database.getClient()
+                    .db("vibe")
+                    .collection("user")
+                    .insertOne(req.body);
+                return true;
+            }
+            return false;
+        });
     }
 }
