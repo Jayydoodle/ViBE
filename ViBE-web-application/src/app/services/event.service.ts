@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 //import { environment } from '@environments/environment';
 //import { User } from '@app/_models';
 
-@Injectable()//({ providedIn: 'root' })
+@Injectable({ providedIn: 'root' })
 export class EventService {
 
     constructor(private http:HttpClient){}
