@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService} from "./../../services/user.service"
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { EventService } from 'src/app/services/event.service';
+import {Event} from '../../models/event';
 
 
 @Component({
@@ -21,9 +22,40 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+   desc:string='';
+   title:string='';  
+
+
+  createEvent()
+  { 
+    let event = new Event;
+  
+    
+    event.firstName = "shabir";
+    event.lat="111";
+    event.long="222";
+    event.title=this.desc;
+    event.description=this.title;
+    event.category="sports"
+
+    this.eventService.createEvent(event)
+    .subscribe((result)=>{
+      console.log("we made it??");
+    })
+
+    // var ele = document.getElementsByName('name'); 
+    // var cat;
+    // for(let i = 0; i < ele.length; i++) { 
+    //     if(ele[i].checked)
+    //        cat= +ele[i].value; 
+    // } 
+    // let author="Shabir";
+
+    
+  }
+
   //function that gets sport events
   getSports(){
-    
    this.eventService.getEventsByCategory("sports")
           .subscribe((result)=>{
             var i=0;

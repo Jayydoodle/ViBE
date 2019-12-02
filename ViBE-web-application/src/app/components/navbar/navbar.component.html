@@ -51,26 +51,26 @@
                      <div  class="btn-group btn-group-toggle" data-toggle="buttons">
                    
                   <label class="btn btn-primary active">
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked>Party
+                    <input type="radio" name="options" id="option1" value ="party" autocomplete="off" checked>Party
                   </label>
                   <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2" autocomplete="off">Event
+                    <input type="radio" name="options" id="option2" value ="Fundraiser"autocomplete="off">Fundraiser
                   </label>
                   <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option3" autocomplete="off">Study
+                    <input type="radio" name="options" id="option3" value="sports" autocomplete="off" >Sports
                   </label>
                     <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option3" autocomplete="off">Concert
+                    <input type="radio" name="options" id="option3" value = "concert"autocomplete="off">Concert
                   </label>
                 </div>
                   </div>
                   <div class="form-group">
-                     <textarea class="form-control" id = "ip2" rows="1"placeholder="Title"></textarea><br>
-                         <textarea class="form-control" id = "ip2" rows="7"placeholder="Description"></textarea>
+                     <textarea class="form-control" id = "title" rows="1"placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"></textarea><br>
+                         <textarea class="form-control" id = "Description" rows="7"placeholder="Description" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
                         </div>
                       </form>
                      <div class="modal-footer">
-                  <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#exampleModalLong">Create Event</button>
+                  <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#exampleModalLong" (click)="createEvent()">Create Event</button>
                 </div>
               </div>
             </div>
