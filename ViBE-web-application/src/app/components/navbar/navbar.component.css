@@ -7,11 +7,30 @@
 #id-modalLabel {
     color: #F0AD4E;
 }
+#modal-create {
+  display: none; /* Hidden by default */
+  z-index: 1; /* Sit on top */
+  left: 50px;
+  top: 100px;
+
+  overflow: auto; /* Enable scroll if needed */
+ 
+}
+.modal-header {
+  background-color: #343A40;
+}
+.modal-footer {
+  background-color: #343A40;
+}
+.modal-title {
+  color:#F0AD4E;
+}
 
 #ip2 {
     border-radius: 25px;
     border: 2px solid#F0AD4E;
     padding: 20px; 
+    background: #343A40;
     
 } 
 
@@ -30,13 +49,15 @@
     cursor: pointer;
   }
 
-  .categories{
-      text-align: center;
-     
-  }
   .h5 {
       text-align: center;
   }
+  .form-control {
+  
+   margin: 0 auto;
+   width: 80%;
+  }
+
 
   .modal-full {
     min-width: 100%;
@@ -57,14 +78,25 @@
     letter-spacing: .22em;
     text-align: center;
     word-spacing: .21em;
+    color: #F0AD4E;
   }
+  #about-us > p {
+
+    font-size: 90%;
+    line-height: 130%;
+    letter-spacing: .22em;
+    text-align: center;
+    word-spacing: .21em;
+    color: #F0AD4E;
+  }
+  
 
   .modal-content .about-modal-content {
     min-height: auto;
   }
 
   #about-us {
-    background-color: #d3d3d3;
+    background-color: #343A40;
     background-color: rbga(211, 211, 211, 0.8);
     border-radius: .57em;
     grid-area: us;
@@ -101,13 +133,18 @@ text-decoration: none;
 
 .et-hero-tabs,
 .et-slide {
+  margin: auto;
+ 
+    flex-direction: row;
+
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 100vh;
+
 position: relative;
-background: #eee;
+background:#343A40 ;
     text-align: center;
     padding: 0 2em;
 h1 {
@@ -122,15 +159,76 @@ h3 {
 }
 }
 
+.et-hero-tabs > h1 {
+  font-family: 'Georgia';
+  font-family: 'Mina';
+  font-size: 200%;
+  line-height: 130%;
+  letter-spacing: .22em;
+  text-align: center;
+  word-spacing: .21em;
+  color: #F0AD4E;
+}
+.et-hero-tabs > h3 {
+  font-family: 'Georgia';
+  font-family: 'Mina';
+  font-size: 130%;
+  line-height: 130%;
+  letter-spacing: .22em;
+  text-align: center;
+  word-spacing: .21em;
+  color: #F0AD4E;
+}
+.et-slide > h1 {
+  font-family: 'Georgia';
+  font-family: 'Mina';
+  font-size: 200%;
+  line-height: 130%;
+  letter-spacing: .22em;
+  text-align: center;
+  word-spacing: .21em;
+  color: #F0AD4E;
+}
+.et-slide > h3 {
+  font-family: 'Georgia';
+  font-family: 'Mina';
+  font-size: 150%;
+  line-height: 130%;
+  letter-spacing: .22em;
+  text-align: center;
+  word-spacing: .21em;
+  color: rgb(255, 255, 255);
+}
+.et-slide > p {
+
+  font-size: 90%;
+  line-height: 130%;
+  letter-spacing: .22em;
+  text-align: center;
+  word-spacing: .21em;
+  color: #F0AD4E;
+}
+
+
+.et-hero-tabs > h3 {
+  font-family: 'Georgia';
+  font-family: 'Mina';
+  font-size: 100%;
+  line-height: 130%;
+  letter-spacing: .22em;
+  text-align: center;
+  word-spacing: .21em;
+  color: #F0AD4E;
+}
 .et-hero-tabs-container {
 display: flex;
 flex-direction: row;
-position: absolute;
+
 bottom: 0;
 width: 100%;
 height: 70px;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-background: #343A40;
+background: white;
 z-index: 10;
 &--top {
     position: fixed;
@@ -199,4 +297,11 @@ transition: left 0.3s ease;
 
   #id-vibeLogo {
     height:25px;
+  }
+
+  .btn-group {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
