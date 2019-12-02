@@ -106,7 +106,7 @@ export class SplashScreenComponent implements OnInit {
   onClick_Authenticate() {
     console.log("modal close clicked");
     this.resetError();
-    if(this.userEmail==="" || this.userPass==="" || this.userName===""){
+    if(this.userEmailLogin==="" || this.userPassLogin===""){
       this.noFieldSpecified = true;
       return;
     }

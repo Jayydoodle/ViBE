@@ -132,7 +132,7 @@ export class NavbarComponent implements OnInit {
 
   onClick_Logout() {
     // logout user from server 
-    console.log("logout clicked.");
+    console.log("Logging out:", AuthenticationService.getEmail());
     document.getElementById('Splash').style.display='block';
     document.getElementById('enterAnimation').style.display='block';
     this.authService.logout();
