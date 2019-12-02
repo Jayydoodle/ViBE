@@ -19,11 +19,13 @@ export class ApiRouter {
         // User
         const userLink = "/user";
         this.router.put(userLink + "/location", this.userController.UpdateUserLocation);
+        this.router.get(userLink, this.userController.getAllUsers);
+        this.router.get(userLink + "/:userEmail", this.userController.getUserByEmail);
 
         // Event
         const eventLink = "/event";
         this.router.post(eventLink + "/create_event", this.eventController.createEvent);
-        //this.router.get("/event", this.eventController.getAllEvents);
+        // this.router.get("/event", this.eventController.getAllEvents);
 
         // Authentication
         const authLink = "/authenticate";

@@ -3,7 +3,30 @@ import {VibeDatabase} from "../vibe.database";
 
 export class UserController {
 
-    private static database: VibeDatabase = new VibeDatabase();
+  private static database: VibeDatabase = new VibeDatabase();
+
+  public getAllUsers(req: express.Request, res: express.Response): void {
+    UserController.database.connect(() => {
+        const Users = UserController.database.getClient().db("vibe").collection("user")
+          .find({})
+          .toArray()
+          .then((result: any) => {
+            res.json(result);
+          });
+    });
+  }
+
+  public getUserByEmail(req: express.Request, res: express.Response): void {
+    UserController.database.connect(() => {
+        const Users = UserController.database.getClient().db("vibe").collection("user")
+          .find({author : req.params.userEmail})
+          // .find({email : req.params.userEmail})
+          .toArray()
+          .then((result: any) => {
+            res.json(result);
+          });
+    });
+  }
 
     // function to create event
     public createUser(req: express.Request, res: express.Response): void {
@@ -12,8 +35,8 @@ export class UserController {
         req.body
        );
       res.send(req.body);
-    });
-  }
+      });
+    }
 
   public UpdateUserLocation(req: express.Request, res: express.Response): void {
 
