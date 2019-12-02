@@ -2,6 +2,27 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const vibe_database_1 = require("../vibe.database");
 class UserController {
+    getAllUsers(req, res) {
+        UserController.database.connect(() => {
+            const Users = UserController.database.getClient().db("vibe").collection("user")
+                .find({})
+                .toArray()
+                .then((result) => {
+                res.json(result);
+            });
+        });
+    }
+    getUserByEmail(req, res) {
+        UserController.database.connect(() => {
+            const Users = UserController.database.getClient().db("vibe").collection("user")
+                .find({ author: req.params.userEmail })
+                // .find({email : req.params.userEmail})
+                .toArray()
+                .then((result) => {
+                res.json(result);
+            });
+        });
+    }
     // function to create event
     createUser(req, res) {
         UserController.database.connect(() => {
