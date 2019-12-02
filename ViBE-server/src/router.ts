@@ -3,7 +3,7 @@ import {Controller} from "./controllers/controller";
 import {EventController} from "./controllers/eventController";
 
 // tslint:disable-next-line:max-line-length
-import { AuthenticateController } from "./controllers/authenticateController.";
+import { AuthenticateController } from "./controllers/authenticateController";
 import {UserController} from "./controllers/userController";
 
 export class ApiRouter {

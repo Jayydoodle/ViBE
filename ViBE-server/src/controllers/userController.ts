@@ -19,8 +19,7 @@ export class UserController {
   public getUserByEmail(req: express.Request, res: express.Response): void {
     UserController.database.connect(() => {
         const Users = UserController.database.getClient().db("vibe").collection("user")
-          .find({author : req.params.userEmail})
-          // .find({email : req.params.userEmail})
+          .find({email : req.params.userEmail})
           .toArray()
           .then((result: any) => {
             res.json(result);

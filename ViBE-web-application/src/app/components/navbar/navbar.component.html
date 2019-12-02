@@ -1,3 +1,4 @@
+<!--LOGO-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="testtt">
     <!-- <a class="navbar-brand text-warning" href="#">ViBE</a> -->
     <img src ="/assets/images/ViBE_noSpace.png" id="id-vibeLogo" alt="vibeLogo.png">
@@ -7,31 +8,37 @@
 &nbsp;
 &nbsp;
 &nbsp;
+
+  <!--Categories-->
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#" (click)="getParty()">Party</a>
-            <a class="dropdown-item" href="#" (click)="getFundraiser()">Fundraiser</a>
-            <a class="dropdown-item" href="#" (click)="getSports()">Sports</a>
+            <a class="dropdown-item" href="#">Party</a>
+            <a class="dropdown-item" href="#">Event</a>
+            <a class="dropdown-item" href="#">Study</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" (click)="getConcert()">Concert</a>
+            <a class="dropdown-item" href="#">Concert</a>
           </div>
         </li>
+
+        <!--CREATE EVENT BUTTON-->
         <li class="nav-item">
           <a class="nav-link text-warning" href="#"onclick="document.getElementById('modal-create').style.display='block';">Create Event</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-warning" href="#myModal" data-toggle="modal">About</a>
-        </li>    
-        
+        </li> 
+
+
+        <!--CREATE EVENT MODAL-->
          <div class="modal" id="modal-create" style="display:none">
             <div class="modal-dialog" role="document">
               <div class="modal-content custom-ting">
                 <div class="modal-header custom-ting">
                   <h5 class="modal-title text-warning">Create an Event</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClick_CloseModal()">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onClick_CloseModal()">
                       <span onclick="document.getElementById('modal-create').style.display='none'" class="close" title="Close Modal">&times;</span>
                   </button>
                 </div>
@@ -78,40 +85,39 @@
 
           <!--ABOUTPAGE MODAL-->
           <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-full" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">About ViBE</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-dialog modal-full" role="document">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <h5 class="modal-title">About ViBE</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
-                </button>
-            </div>
+                  </button>
+                </div>
             <div class="modal-body p-4" id="result">
-            
-                    <div id='about-us'>
+          <div id='about-us'>
             <h1>Growing Together</h1>
-            &nbsp;
+               &nbsp;
                 <p>This site was put together in late 2019 by a group of students from the East Coast area taking the "Advanced Web Technology course" originally designed to enteract with a database and allow people of like minded interests to connect with each other. </p><br>
-                <p>We are ecstatic to continue our learning journies in tech.</p> <br>
-                <p>Building this site has inspired us to push our abilities as developers to the next level! We hope it might help you find and share opportunities for inspiration, learning, growth, and for your community as well.</p><br>
+                 <p>We are ecstatic to continue our learning journies in tech.</p> <br>
+                 <p>Building this site has inspired us to push our abilities as developers to the next level! We hope it might help you find and share opportunities for inspiration, learning, growth, and for your community as well.</p><br>
                 <p>Code on.</p>
-        </div>
-                        <div id='about-us'>
+             </div>
+          <div id='about-us'>
           
               <!-- NAMES -->
-  <section class="et-hero-tabs">
-    <h1>MEET THE TEAM</h1>
-    <h3>Take a look at the developers behind this project</h3>
-    <div class="et-hero-tabs-container">
-      <a class="et-hero-tab" href="#tab-ja">Jason Allen</a>
-      <a class="et-hero-tab" href="#tab-sg">Shabir Ghulam</a>
-      <a class="et-hero-tab" href="#tab-ni">Nonso Iwu</a>
-      <a class="et-hero-tab" href="#tab-ar">Amaad Rafi</a>
-      <a class="et-hero-tab" href="#tab-tb">Toby Boyd</a>
-      <a class="et-hero-tab" href="#tab-jb">Jason Burnell</a>
-      <span class="et-hero-tab-slider"></span>
-    </div>
-  </section>
+          <section class="et-hero-tabs">
+            <h1>MEET THE TEAM</h1>
+             <h3>Take a look at the developers behind this project</h3>
+               <div class="et-hero-tabs-container">
+                  <a class="et-hero-tab" href="#tab-ja">Jason Allen</a>
+                  <a class="et-hero-tab" href="#tab-sg">Shabir Ghulam</a>
+                  <a class="et-hero-tab" href="#tab-ni">Nonso Iwu</a>
+                  <a class="et-hero-tab" href="#tab-ar">Amaad Rafi</a>
+                  <a class="et-hero-tab" href="#tab-tb">Toby Boyd</a>
+                  <a class="et-hero-tab" href="#tab-jb">Jason Burnell</a>
+              <span class="et-hero-tab-slider"></span>
+            </div>
+          </section>
 
   <!-- Main -->
   <main class="et-main">
@@ -170,21 +176,14 @@
        project. Jason can be found on <a href="https://github.com/jasonburnell98">Github</a>.</p>
     </section>
   </main>
-               
-                
-
         </div>
-                  
-                    
-            </div>
+      </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
             </div>
         </div>
     </div>
-</div>
-
-          
+</div>    
       </ul>
       
       <!-- <form class="form-inline my-2 my-lg-0">
@@ -199,3 +198,4 @@
       </ul>
     </div>
   </nav>
+

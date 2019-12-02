@@ -1,3 +1,4 @@
+
 .custom-ting {
     background-color: #343A40;
 }
@@ -11,7 +12,7 @@
   left: 50px;
   top: 100px;
 
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Enable scroll if needed */
  
 }
 .modal-header {
@@ -91,6 +92,7 @@
   .modal-content .about-modal-content {
     min-height: auto;
   }
+
 
   #about-us {
     background-color: #343A40;
@@ -226,12 +228,7 @@ width: 100%;
 height: 70px;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 background: white;
-z-index: 10;
-&--top {
-    position: fixed;
-    top: 0;
-}
-}
+z-index: 10;}
 
 .et-hero-tab {
 display: flex;
@@ -246,7 +243,7 @@ letter-spacing: 0.1rem;
 }
 .et-hero-tab:hover {
     color: #F0AD4E;
-background: #343A40;
+background: rgb(34, 86, 138);
     transition: all 0.5s ease;
 }
 
@@ -260,20 +257,7 @@ background: #66B1F1;
 transition: left 0.3s ease;
 }
 
-@media (min-width: 800px) {
-  .et-hero-tabs, .et-slide {
-    h1 {
-        font-size: 3rem;
-    }
-    
-    h3 {
-        font-size: 1rem;
-    }
-  }
-  .et-hero-tab {
-      font-size: 1rem;
-  }
-}
+
   
   /* visited link */
   a:visited {
@@ -300,3 +284,5 @@ transition: left 0.3s ease;
     flex-direction: row;
     justify-content: center;
   }
+
+  
