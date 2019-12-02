@@ -291,9 +291,6 @@ transition: left 0.3s ease;
 .vibeButton{
     color: inherit;
 }
-
-.otherVibeButton{
-}
 .otherVibeButton:hover{
     background-color : #F0AD4E;
 }

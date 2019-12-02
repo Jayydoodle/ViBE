@@ -96,10 +96,18 @@ export class MapComponent implements OnInit {
           title: result[i].title
         });
         markers.push(marker);
+       /* google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+              var infowindow = new google.maps.InfoWindow;
+              infowindow.setContent(result[i]);
+              infowindow.open(map, marker);
+          }
+        })(marker, i));*/
     }
 
     return markers;
   }
+  
   public static clearMarkers(markers){
 
     for(var i = 0; i < markers.length; i++){
