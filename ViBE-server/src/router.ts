@@ -3,7 +3,7 @@ import {Controller} from "./controllers/controller";
 import {EventController} from "./controllers/eventController";
 
 // tslint:disable-next-line:max-line-length
-import { AuthenticateController } from "./controllers/authenticateController.";
+import { AuthenticateController } from "./controllers/authenticateController";
 import {UserController} from "./controllers/userController";
 
 export class ApiRouter {
@@ -25,7 +25,7 @@ export class ApiRouter {
         // Event
         const eventLink = "/event";
         this.router.get(eventLink, this.eventController.getAllEvents);
-        this.router.post(eventLink + "/create_event", this.eventController.createEvent);
+        this.router.post(eventLink, this.eventController.createEvent);
         this.router.get(eventLink + "/:category", this.eventController.getEventbyCategory);
         // this.router.get("/event", this.eventController.getAllEvents);
 

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const eventController_1 = require("./controllers/eventController");
 // tslint:disable-next-line:max-line-length
-const authenticateController_1 = require("./controllers/authenticateController.");
+const authenticateController_1 = require("./controllers/authenticateController");
 const userController_1 = require("./controllers/userController");
 class ApiRouter {
     constructor() {
@@ -26,7 +26,7 @@ class ApiRouter {
         // Event
         const eventLink = "/event";
         this.router.get(eventLink, this.eventController.getAllEvents);
-        this.router.post(eventLink + "/create_event", this.eventController.createEvent);
+        this.router.post(eventLink, this.eventController.createEvent);
         this.router.get(eventLink + "/:category", this.eventController.getEventbyCategory);
         // this.router.get("/event", this.eventController.getAllEvents);
         // Authentication
