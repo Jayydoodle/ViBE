@@ -2,8 +2,6 @@
     background-color: #343A40;
 }
 
-
-
 #id-modalLabel {
     color: #F0AD4E;
 }
@@ -263,21 +261,19 @@ transition: left 0.3s ease;
 }
 
 @media (min-width: 800px) {
-.et-hero-tabs,
-.et-slide {
-  h1 {
-      font-size: 3rem;
+  .et-hero-tabs, .et-slide {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
   }
-  h3 {
+  .et-hero-tab {
       font-size: 1rem;
   }
 }
-.et-hero-tab {
-    font-size: 1rem;
-}
-}
-
-
   
   /* visited link */
   a:visited {

@@ -36,10 +36,11 @@ export class SplashScreenComponent implements OnInit {
      .subscribe((result)=>{
        console.log(result);
      });
+
+     this.onClick_Login();
   }
 
   onClick_Login() {
-    //console.log("login was clicked");
     this.userName = "";
     this.userEmail = "";
     this.userPass = "";
@@ -72,7 +73,13 @@ export class SplashScreenComponent implements OnInit {
     console.log("modal close clicked");
     document.getElementById('modal-login').style.display='none';
     document.getElementById('Splash').style.display='none';
+    document.getElementById('id-registerAlert').style.display='block';  
   }
 
+  onClick_Enter() {
+    console.log("Entered.");
+    document.getElementById('enterAnimation').style.display='none';
+    document.getElementById('modal-login').style.display='block';
+  }
 
 }
