@@ -95,7 +95,7 @@
 
 
   #about-us {
-    background-color: #343A40;
+    background-color: #74828F;
     background-color: rbga(211, 211, 211, 0.8);
     border-radius: .57em;
     grid-area: us;
@@ -143,7 +143,7 @@ align-items: center;
 height: 100vh;
 
 position: relative;
-background:#343A40 ;
+background:#74828F ;
     text-align: center;
     padding: 0 2em;}
 h1 {
@@ -196,7 +196,7 @@ h3 {
   letter-spacing: .22em;
   text-align: center;
   word-spacing: .21em;
-  color: rgb(255, 255, 255);
+  color: whitesmoke;
 }
 .et-slide > p {
 
