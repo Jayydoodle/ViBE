@@ -28,13 +28,8 @@ export class AuthenticateController {
               .find({email : { $eq: email}}).limit(1)
               .toArray()
               .then((user: any) => {
-                  // console.log(user);
-                   console.log(email);
-                   console.log(password);
                    if (0 !== user.length) {
                       console.log(user.length !== 0);
-                      console.log(user);
-                      console.log("ayoo");
                       // Found user
                       bcrypt.compare(password, user[0].password, function(err: any, bool: boolean) {
                           if (err) {

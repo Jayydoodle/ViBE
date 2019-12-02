@@ -35,7 +35,6 @@ export class NavbarComponent implements OnInit {
   { 
     let event = new Event;
   
-    
     event.firstName = "shabir";
     event.lat="111";
     event.long="222";
@@ -131,27 +130,13 @@ export class NavbarComponent implements OnInit {
    
   }
 
-<<<<<<< HEAD
-  onClick_Logout(){
-    console.log("logout");
-    this.authService.logout();
-    //Go back to enter page
-    //document.getElementById('modal-login').style.display='true';
-
-    //document.getElementById("login-toggle").style.backgroundColor="#F0AD4E";
-    //document.getElementById("login-toggle").style.color="#343A40";
-    //document.getElementById("signup-toggle").style.backgroundColor="#fff";
-    //document.getElementById("signup-toggle").style.color="#343A40";
-    //document.getElementById("signup-form").style.display="true";
-    //document.getElementById("login-form").style.display="block";
-=======
   onClick_Logout() {
     // logout user from server 
     console.log("logout clicked.");
     document.getElementById('Splash').style.display='block';
     document.getElementById('enterAnimation').style.display='block';
+    this.authService.logout();
     //this.router.navigate(['/']);
->>>>>>> 624cf45b6008d87c4def69f11e468af2fff227e1
   }
 }
 

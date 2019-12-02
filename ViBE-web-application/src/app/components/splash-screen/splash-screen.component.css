@@ -9,6 +9,11 @@
     z-index: 1;
 }
 
+.errorMessage{
+    font-weight: 900;
+    color: red;
+}
+
 #SplashBackground{
 
     position: relative;

@@ -7,9 +7,6 @@
     color: #F0AD4E;
 }
 
-#myModal{
-  
-}
 #modal-create {
   display: none; /* Hidden by default */
   z-index: 1; /* Sit on top */

@@ -25,16 +25,11 @@ class AuthenticateController {
         const password = req.body.password;
         AuthenticateController.database.connect(() => {
             AuthenticateController.database.getClient().db("vibe").collection("user")
-                .find({ email: "\"" + email + "\"" })
+                .find({ email: { $eq: email } }).limit(1)
                 .toArray()
                 .then((user) => {
-                // console.log(user);
-                console.log(email);
-                console.log(password);
                 if (0 !== user.length) {
                     console.log(user.length !== 0);
-                    console.log(user);
-                    console.log("ayoo");
                     // Found user
                     bcrypt.compare(password, user[0].password, function (err, bool) {
                         if (err) {
@@ -79,7 +74,6 @@ class AuthenticateController {
                 .find({ email: { $eq: email } }).limit(1)
                 .toArray()
                 .then((result1) => {
-                console.log('"' + email + '"');
                 if (0 === result1.length) {
                     AuthenticateController.database.connect(() => {
                         AuthenticateController.database.getClient()

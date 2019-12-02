@@ -19,6 +19,8 @@ export class SplashScreenComponent implements OnInit {
   userPassLogin:string = "";
 
   userExistsRegister:boolean;
+  noFieldSpecified:boolean;
+  noRecord:boolean;
 
   ngOnInit() {
   }
@@ -27,6 +29,20 @@ export class SplashScreenComponent implements OnInit {
     console.log("woah");
   }
 
+  resetError(){
+    this.userExistsRegister = false;
+    this.noFieldSpecified = false;
+    this.noRecord = false;
+  }
+
+  resetFields(){
+    this.userName = "";
+    this.userEmail = "";
+    this.userPass = "";
+
+    this.userEmailLogin = "";
+    this.userPassLogin = "";
+  }
   onClick_Register() {
     let newUser:User = {
       username: this.userName,
@@ -35,24 +51,30 @@ export class SplashScreenComponent implements OnInit {
       location: { longitude: 0, latitude: 0}
     };
 
-    this.userExistsRegister = false;
-
-    console.log(newUser);
+    this.resetError();
+    if(this.userEmail==="" || this.userPass==="" || this.userName===""){
+      this.noFieldSpecified = true;
+      return;
+    }
     this.authService.register(newUser)
      .subscribe((result)=>{
         if(result.success === false){
           this.userExistsRegister = true;
+          return;
+        }else{
+          this.userEmailLogin = this.userEmail;
+          this.userPassLogin = this.userPass;
+          this.onClick_Authenticate();
         }
      });
-
-
-     this.onClick_Login();
   }
 
   onClick_Login() {
     this.userName = "";
     this.userEmail = "";
     this.userPass = "";
+    this.resetError();
+    this.resetFields();
     document.getElementById("login-toggle").style.backgroundColor="#F0AD4E";
     document.getElementById("login-toggle").style.color="#343A40";
     document.getElementById("signup-toggle").style.backgroundColor="#fff";
@@ -65,6 +87,8 @@ export class SplashScreenComponent implements OnInit {
     this.userName = "";
     this.userEmail = "";
     this.userPass = "";
+    this.resetError();
+    this.resetFields();
     document.getElementById("login-toggle").style.backgroundColor="#fff";
     document.getElementById("login-toggle").style.color="#343A40";
     document.getElementById("signup-toggle").style.backgroundColor="#F0AD4E";
@@ -83,14 +107,16 @@ export class SplashScreenComponent implements OnInit {
 
     return this.authService.login(this.userEmailLogin, this.userPassLogin)
       .subscribe((result)=>{
-        console.log(result);
         if(result==null){
+          this.noRecord = true;
           return false;
         }else{
           //enter
           document.getElementById('modal-login').style.display='none';
           document.getElementById('Splash').style.display='none';
-          document.getElementById('id-registerAlert').style.display='block';  
+          //document.getElementById('id-registerAlert').style.display='block';
+          this.resetError();
+          this.resetFields();
           return true;
         }
       });

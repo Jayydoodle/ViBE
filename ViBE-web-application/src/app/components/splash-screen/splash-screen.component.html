@@ -45,14 +45,18 @@
   
       <div id="login-form">
           <form>
-              <input type="text" placeholder="Email" [(ngModel)]="this.userEmail" [ngModelOptions]="{standalone: true}"/>
-              <input type="password" placeholder="Password" [(ngModel)]="this.userPass" [ngModelOptions]="{standalone: true}"/>
+              <span *ngIf="noFieldSpecified" class="errorMessage"> No fields must be left blank!</span>
+              <span *ngIf="noRecord" class="errorMessage"> No combination of email and password match our records. </span>
+              <input type="text" placeholder="Email" [(ngModel)]="this.userEmailLogin" [ngModelOptions]="{standalone: true}"/>
+              <input type="password" placeholder="Password" [(ngModel)]="this.userPassLogin" [ngModelOptions]="{standalone: true}"/>
               <button type="button" class="btn login" (click)="onClick_Authenticate()">login</button>
           </form>
       </div>
   
       <div id="signup-form">
           <form>
+              <span *ngIf="userExistsRegister" class="errorMessage"> User with email already exists!</span>
+              <span *ngIf="noFieldSpecified" class="errorMessage"> No fields must be left blank!</span>
               <input type="email" placeholder="Email" [(ngModel)]="this.userEmail" [ngModelOptions]="{standalone: true}"/>
               <input type="text" placeholder="Username" [(ngModel)]="this.userName" [ngModelOptions]="{standalone: true}"/>
               <input type="password" placeholder="Password" [(ngModel)]="this.userPass" [ngModelOptions]="{standalone: true}"/>
