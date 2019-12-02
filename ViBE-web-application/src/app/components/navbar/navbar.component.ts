@@ -30,6 +30,10 @@ export class NavbarComponent implements OnInit {
    desc:string='';
    title:string='';  
 
+  scrollIntoView(event:string){
+    const element = document.getElementById(event);
+    element.scrollIntoView()
+  }
 
   createEvent()
   { 
