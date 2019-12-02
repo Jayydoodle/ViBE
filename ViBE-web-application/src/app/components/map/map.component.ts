@@ -17,7 +17,6 @@ export class MapComponent implements OnInit {
   constructor(private userService: UserService){}
 
   ngOnInit(): void {
-
     var newarkDE = new google.maps.LatLng(39.6780, -75.7506);
     
     var infoWindow = new google.maps.InfoWindow;
@@ -77,5 +76,8 @@ export class MapComponent implements OnInit {
       radius: 50
     });
     heatmap.setMap(this.map);
+  }
+  public static setMap(){
+    console.log();
   }
 }

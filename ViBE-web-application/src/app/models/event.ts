@@ -1,8 +1,12 @@
+
+
 export class Event {
     id: number;
-    username: string;
-    password: string;
-    firstName: string;
-    lastName: string;
-    token: string;
+    title: string;
+    category: string;
+    description: string;
+    location: {
+        longitude: number; 
+        latitude: number;
+    };
 }
