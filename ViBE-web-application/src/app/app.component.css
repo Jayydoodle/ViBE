@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 #id_content {
   display: flex;
   flex-flow: column;

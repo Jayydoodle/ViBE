@@ -1,4 +1,3 @@
-
 .custom-ting {
     background-color: #343A40;
 }
@@ -225,6 +224,7 @@ h3 {
 .et-hero-tabs-container {
 display: flex;
 flex-direction: row;
+scroll-behavior: smooth;
 
 bottom: 0;
 width: 100%;
@@ -316,7 +316,17 @@ transition: left 0.3s ease;
 .vibeButton:active:hover{
     color: #F0AD4E;
 }
+<<<<<<< HEAD
 .pac-container {
   z-index: 99999999999 !important;
   margin-top: -210px;
+=======
+
+.otherVibeButton2{
+    color: #343A40;
+}
+.otherVibeButton2:hover{
+    background-color : #F0AD4E;
+    color: #343A40;
+>>>>>>> d8a3381771d00b9cc6ed5c2e2bd42cbbc2cc50e1
 }
