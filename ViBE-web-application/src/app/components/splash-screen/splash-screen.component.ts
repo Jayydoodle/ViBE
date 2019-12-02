@@ -72,7 +72,6 @@ export class SplashScreenComponent implements OnInit {
     console.log("modal close clicked");
     document.getElementById('modal-login').style.display='none';
     document.getElementById('Splash').style.display='none';
-    document.getElementById('id-registerAlert').style.display='block';  
   }
 
   onClick_Enter() {

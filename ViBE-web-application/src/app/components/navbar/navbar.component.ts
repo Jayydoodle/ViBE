@@ -5,6 +5,7 @@ import { User } from './../../models/user';
 import { updateLocale } from 'moment';
 import { EventService } from 'src/app/services/event.service';
 import {Event} from '../../models/event';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -16,10 +17,12 @@ import {Event} from '../../models/event';
 export class NavbarComponent implements OnInit {
 
   //eventService:EventService;
-  constructor(private userService:UserService,
-              private eventService:EventService,
-              private authService: AuthenticationService) { 
-  }
+  constructor(
+    private userService:UserService,
+    private eventService:EventService,
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
   }
@@ -128,11 +131,13 @@ export class NavbarComponent implements OnInit {
    
   }
 
-  swapButtons(){
-
-    
+  onClick_Logout() {
+    // logout user from server 
+    console.log("logout clicked.");
+    document.getElementById('Splash').style.display='block';
+    document.getElementById('enterAnimation').style.display='block';
+    //this.router.navigate(['/']);
   }
-
 }
 
 
