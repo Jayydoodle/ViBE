@@ -19,7 +19,7 @@ export class UserService {
     }
     
     public getUserByEmail(email:string){
-        return this.http.get<any>(this.dataBaseUri+this.serviceLink+`/${email}`);
+        return this.http.get<any[]>(this.dataBaseUri+this.serviceLink+`/${email}`);
     }
 
     public postUser(){

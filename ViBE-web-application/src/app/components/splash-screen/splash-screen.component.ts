@@ -24,7 +24,6 @@ export class SplashScreenComponent implements OnInit {
 
   onClick_Register() {
     let newUser:User = {
-      id: 0, 
       username: this.userName,
       email: this.userEmail,
       password: this.userPass,
