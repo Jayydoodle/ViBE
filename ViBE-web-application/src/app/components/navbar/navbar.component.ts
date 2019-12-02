@@ -21,11 +21,13 @@ export class NavbarComponent implements OnInit {
   onClick_Login() {
     console.log("login was clicked");
     document.getElementById('modal-login').style.display='block';
+    document.getElementById("overlay").style.display = "block";
   }
 
   onClick_CloseModal() {
     console.log("modal close clicked");
     document.getElementById('modal-login').style.display='none';
+    document.getElementById("overlay").style.display = "none";
   }
 
   

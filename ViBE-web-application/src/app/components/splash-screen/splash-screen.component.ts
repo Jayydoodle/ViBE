@@ -43,8 +43,8 @@ export class SplashScreenComponent implements OnInit {
     this.userName = "";
     this.userEmail = "";
     this.userPass = "";
-    document.getElementById("login-toggle").style.backgroundColor="#F0AD4E";
-    document.getElementById("login-toggle").style.color="#343A40";
+    document.getElementById("login-toggle").style.backgroundColor="#57B846";
+    document.getElementById("login-toggle").style.color="#fff";
     document.getElementById("signup-toggle").style.backgroundColor="#fff";
     document.getElementById("signup-toggle").style.color="#343A40";
     document.getElementById("signup-form").style.display="none";
@@ -52,7 +52,6 @@ export class SplashScreenComponent implements OnInit {
   }
 
   onClick_Signup() {
-    //console.log("signup was clicked");
     this.userName = "";
     this.userEmail = "";
     this.userPass = "";
