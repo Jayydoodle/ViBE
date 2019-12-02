@@ -43,10 +43,10 @@ export class SplashScreenComponent implements OnInit {
     this.userName = "";
     this.userEmail = "";
     this.userPass = "";
-    document.getElementById("login-toggle").style.backgroundColor="#57B846";
-    document.getElementById("login-toggle").style.color="#fff";
+    document.getElementById("login-toggle").style.backgroundColor="#F0AD4E";
+    document.getElementById("login-toggle").style.color="#343A40";
     document.getElementById("signup-toggle").style.backgroundColor="#fff";
-    document.getElementById("signup-toggle").style.color="#222";
+    document.getElementById("signup-toggle").style.color="#343A40";
     document.getElementById("signup-form").style.display="none";
     document.getElementById("login-form").style.display="block";
   }
@@ -57,9 +57,9 @@ export class SplashScreenComponent implements OnInit {
     this.userEmail = "";
     this.userPass = "";
     document.getElementById("login-toggle").style.backgroundColor="#fff";
-    document.getElementById("login-toggle").style.color="#222";
-    document.getElementById("signup-toggle").style.backgroundColor="#57b846";
-    document.getElementById("signup-toggle").style.color="#fff";
+    document.getElementById("login-toggle").style.color="#343A40";
+    document.getElementById("signup-toggle").style.backgroundColor="#F0AD4E";
+    document.getElementById("signup-toggle").style.color="#343A40";
     document.getElementById("login-form").style.display="none";
     document.getElementById("signup-form").style.display="block";
   }

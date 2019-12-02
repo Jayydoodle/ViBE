@@ -27,5 +27,5 @@ export class UserController {
           console.log(result + "updated");
         });
       });
-}
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import {} from 'googlemaps';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-map',
@@ -11,6 +12,8 @@ export class MapComponent implements OnInit {
   @ViewChild('map', {static: true}) mapElement: any;
   map: google.maps.Map;
   pos: any;
+
+  constructor(private userService: UserService){}
 
   ngOnInit(): void {
 
@@ -24,6 +27,8 @@ export class MapComponent implements OnInit {
       mapTypeId: 'roadmap'
     });
   
+    console.log("this rannnnnnnnnnnn" + this.userService.getUsers());
+
     this.setHeatmapTest();
 
     navigator.geolocation.getCurrentPosition(position => {
