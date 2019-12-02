@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from "./../../models/user";
+import { AuthenticationService } from '../../services/authentication.service';
 import { GooglemapApiService } from 'src/app/googlemap-api.service';
 
 @Component({
@@ -31,11 +32,11 @@ export class MapComponent implements OnInit {
       zoom: 15,
       mapTypeId: 'roadmap'
     });
-    var user = new User();
+    var user;
     
-    this.userService.getUserByEmail("Shabir").subscribe(userData =>{
+    this.userService.getUserByEmail(AuthenticationService.getEmail()).subscribe(userData =>{
         
-        user = userData[0];
+        user = userData;
 
         navigator.geolocation.getCurrentPosition(position => {
           var pos = {
@@ -88,17 +89,20 @@ export class MapComponent implements OnInit {
     });
     heatmap.setMap(this.map);
   }
-  public static showEvents(result, map){
+  public static showEvents(result, map): any{
     
     var markers = [];
     var marker;
     for(var i = 0; i < result.length; i++){
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(result[i].latitude, result[i].longitude),
-          map: map
+          map: map,
+          title: result[i].title
         });
         markers.push(marker);
     }
+
+    return markers;
 
  /* google.maps.event.addListener(marker, 'click', (function(marker, i) {
     return function() {
@@ -106,5 +110,12 @@ export class MapComponent implements OnInit {
       infowindow.open(map, marker);
     }
   })(marker, i));*/
+  }
+  public static clearMarkers(markers){
+
+    for(var i = 0; i < markers.length; i++){
+
+      markers[i].setMap(null);
+    }
   }
 }
