@@ -31,6 +31,7 @@ export class AuthenticationService {
          */
         return this.http.post<any[]>(this.dataBaseUri+this.serviceLink+"/login", {email : email, password : password})
             .pipe(tap(res=>{
+                localStorage.setItem('email', email);
                 return this.setSession(res);
             }));
     }
@@ -56,8 +57,13 @@ export class AuthenticationService {
     }
 
     logout() {
+        localStorage.removeItem("email");
         localStorage.removeItem("id_token");
         localStorage.removeItem("expires_at");
+    }
+
+    static getEmail(){
+        return localStorage.getItem("email");
     }
 
     getExpiration() {

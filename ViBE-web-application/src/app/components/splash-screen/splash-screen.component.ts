@@ -43,6 +43,7 @@ export class SplashScreenComponent implements OnInit {
     this.userEmailLogin = "";
     this.userPassLogin = "";
   }
+
   onClick_Register() {
     let newUser:User = {
       username: this.userName,
@@ -104,7 +105,11 @@ export class SplashScreenComponent implements OnInit {
 
   onClick_Authenticate() {
     console.log("modal close clicked");
-
+    this.resetError();
+    if(this.userEmailLogin==="" || this.userPassLogin===""){
+      this.noFieldSpecified = true;
+      return;
+    }
     return this.authService.login(this.userEmailLogin, this.userPassLogin)
       .subscribe((result)=>{
         if(result==null){
